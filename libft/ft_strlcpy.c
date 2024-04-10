@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 12:18:14 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/09 14:57:08 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/04/09 15:23:18 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/04/09 15:24:47 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_strlcpy(char *dst,const char *src, int n)
 {
-	char	*str;
-	size_t	i;
+	int	i;
+	int	size;
 
-	str = ft_strdup(s);
-	if (!str)
-		return (NULL);
+	size = ft_strlen(src);
 	i = 0;
-	while (str[i])
+	if (!dst || !src)
+		return (0);
+	if (n == 0)
+		return (size);
+	while ((src[i]) && (i < n - 1))
 	{
-		str[i] = (*f)(i, str[i]);
+		dst[i] = src[i];
 		i++;
 	}
-	return (str);
+	dst[i] = '\0';
+	return (size);
 }

@@ -1,15 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/09 12:16:40 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/04/09 14:54:02 by gude-jes         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_abs(int nbr)
+int	ft_abs(int nbr)
 {
-    if(nbr < 0)
-        return -nbr;
-    else
-        return nbr;
+	if (nbr < 0)
+		return (-nbr);
+	else
+		return (nbr);
 }
 
-
-void ft_strrev(char *str)
+void	ft_strrev(char *str)
 {
 	size_t	length;
 	size_t	i;
@@ -26,17 +37,18 @@ void ft_strrev(char *str)
 	}
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	int		is_neg;
 	size_t	length;
 
 	if (n < 0)
-	    is_neg = 1;
+		is_neg = 1;
 	else
-	    is_neg = 0;
-	if (!(str = ft_calloc(11 + is_neg, sizeof(*str))))
+		is_neg = 0;
+	str = ft_calloc(11 + is_neg, sizeof(*str));
+	if (!str)
 		return (NULL);
 	if (n == 0)
 		str[0] = '0';

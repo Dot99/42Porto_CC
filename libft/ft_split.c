@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/09 12:17:32 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/04/09 16:10:01 by gude-jes         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	check_separator(char c, char *charset)
@@ -61,7 +73,7 @@ char	*ft_word(char const *str, char *charset)
 	return (word);
 }
 
-char	**ft_split(char const *str, char *c)
+char	**ft_split(char const *str, char c)
 {
 	char	**strings;
 	int		i;
