@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:17:32 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/09 16:10:01 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:43:59 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,17 +80,17 @@ char	**ft_split(char const *str, char c)
 
 	i = 0;
 	strings = (char **)malloc(sizeof(char *)
-			* (count_strings(str, c) + 1));
+			* (count_strings(str, &c) + 1));
 	while (*str != '\0')
 	{
-		while (*str != '\0' && check_separator(*str, c))
+		while (*str != '\0' && check_separator(*str, &c))
 			str++;
 		if (*str != '\0')
 		{
-			strings[i] = ft_word(str, c);
+			strings[i] = ft_word(str, &c);
 			i++;
 		}
-		while (*str && !check_separator(*str, c))
+		while (*str && !check_separator(*str, &c))
 			str++;
 	}
 	strings[i] = 0;

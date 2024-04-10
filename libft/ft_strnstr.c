@@ -6,35 +6,31 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:18:19 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/09 16:00:31 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/10 13:02:17 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *origin,const char *find, int n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	i;
-	int	k;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	j = 0;
-	if (!find[i])
-		return (origin);
-	while ((origin[i] && origin[i] != find[i]) && (i < n))
-		i++;
-	if (i > n)
-		return (0);
-	k = i;
-	while (find[j])
+	if (!haystack || !needle)
+		return (NULL);
+	if (!needle || !needle[0])
+		return ((char *)haystack);
+	while (haystack[i] && i < len)
 	{
-		if (k > n)
-			return (0);
-		if (origin[k] == find[j++])
-			k++;
-		else
-			return (0);
+		j = 0;
+		while (haystack[i + j] && needle[j]
+			&& i + j < len && haystack[i + j] == needle[j])
+			j++;
+		if (!needle[j])
+			return ((char *)(haystack + 1));
+		i++;
 	}
-	return (origin + i);
+	return (NULL);
 }

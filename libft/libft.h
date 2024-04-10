@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 13:37:27 by dot               #+#    #+#             */
-/*   Updated: 2024/04/09 16:15:04 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/10 12:54:31 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,17 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
-int		ft_memcmp(const void *s1,const void *s2, size_t n);
-size_t		ft_strlcat(char *dst, const char *src, size_t n);
-int		ft_strlcpy(char *dst,const char *src, int n);
-size_t		ft_strlen(char const *str);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+size_t	ft_strlcat(char *dst, const char *src, size_t n);
+int		ft_strlcpy(char *dst, const char *src, int n);
+size_t	ft_strlen(char const *str);
 int		ft_strncmp(char const *s1, char const *s2, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 char	*ft_strchr(const char *str, int c);
 char	*ft_strdup(const char *s);
-char	*ft_strnstr(const char *origin,const char *find, int n);
+char	*ft_strnstr(const char *origin, const char *find, size_t n);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_itoa(int n);
 char	**ft_split(char const *str, char c);

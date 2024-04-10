@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:05:29 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/09 16:20:44 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:44:07 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	if ((str[i] == 43) || (str[i] == 45))
-		return(0);
+		return (0);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		number = (number * 10) + (str[i] - 48);
