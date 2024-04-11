@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:18:19 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/10 13:02:17 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/11 09:07:46 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			&& i + j < len && haystack[i + j] == needle[j])
 			j++;
 		if (!needle[j])
-			return ((char *)(haystack + 1));
+			return ((char *)(haystack + i));
 		i++;
 	}
 	return (NULL);

@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:17:32 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/10 11:43:59 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/11 12:52:27 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	check_separator(char c, char *charset)
 	int	i;
 
 	i = 0;
-	while (charset[i] != '\0')
+	while (charset[i])
 	{
 		if (c == charset[i])
 			return (1);
@@ -26,20 +26,20 @@ int	check_separator(char c, char *charset)
 	return (0);
 }
 
-int	count_strings(char const *str, char *charset)
+int	count_strings(char const *str, char charset)
 {
 	int	i;
 	int	count;
 
 	count = 0;
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		while (str[i] != '\0' && check_separator(str[i], charset))
+		while (str[i] && check_separator(str[i], &charset))
 			i++;
-		if (str[i] != '\0')
+		if (str[i])
 			count++;
-		while (str[i] != '\0' && !check_separator(str[i], charset))
+		while (str[i] && !check_separator(str[i], &charset))
 			i++;
 	}
 	return (count);
@@ -80,12 +80,12 @@ char	**ft_split(char const *str, char c)
 
 	i = 0;
 	strings = (char **)malloc(sizeof(char *)
-			* (count_strings(str, &c) + 1));
-	while (*str != '\0')
+			* (count_strings(str, c) + 1));
+	while (*str)
 	{
-		while (*str != '\0' && check_separator(*str, &c))
+		while (*str && check_separator(*str, &c))
 			str++;
-		if (*str != '\0')
+		if (*str)
 		{
 			strings[i] = ft_word(str, &c);
 			i++;
