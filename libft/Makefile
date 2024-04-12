@@ -6,7 +6,7 @@
 #    By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 12:18:36 by gude-jes          #+#    #+#              #
-#    Updated: 2024/04/11 11:07:34 by gude-jes         ###   ########.fr        #
+#    Updated: 2024/04/12 13:12:05 by gude-jes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror.
+CFLAGS			= -Wall -Wextra -Werror
 
 NAME			= libft.a
 
