@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:18:14 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/09 14:57:08 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:04:28 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,22 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
-	size_t	i;
+	unsigned int	i;
+	unsigned int	length;
+	char			*res;
 
-	str = ft_strdup(s);
-	if (!str)
+	if (!s)
+		return (NULL);
+	length = ft_strlen(s);
+	res = malloc(length * sizeof(char) + 1);
+	if (!res)
 		return (NULL);
 	i = 0;
-	while (str[i])
+	while (i < length)
 	{
-		str[i] = (*f)(i, str[i]);
+		res[i] = (*f)(i, s[i]);
 		i++;
 	}
-	return (str);
+	res[i] = '\0';
+	return (res);
 }

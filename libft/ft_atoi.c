@@ -6,13 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:05:29 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/10 11:44:07 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/17 09:26:00 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	number;
 	int	i;

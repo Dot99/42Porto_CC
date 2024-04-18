@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:17:04 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/11 12:59:07 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:52:22 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *))
 	if (!f || !del || !lst)
 		return (NULL);
 	first = NULL;
-	//new = ft_lstnew((*f)(lst->content));
 	new = NULL;
 	while (lst)
 	{
@@ -31,7 +30,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *))
 		{
 			del(set);
 			ft_lstclear(&first, (*del));
-			return(first);
+			return (first);
 		}
 		ft_lstadd_back(&first, new);
 		lst = lst->next;

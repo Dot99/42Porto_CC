@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:18:09 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/10 09:41:58 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:08:01 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	src_length;
 
 	src_length = ft_strlen(src);
+	if (!dst && size == 0)
+		return (src_length);
 	dest_length = ft_strlen(dst);
 	j = dest_length;
 	i = 0;
