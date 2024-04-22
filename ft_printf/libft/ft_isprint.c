@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 10:35:41 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/15 12:16:51 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/04/09 12:16:38 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/04/09 14:54:00 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "libft.h"
 
-int	ft_putptr(unsigned long nbr)
+int	ft_isprint(int c)
 {
-	int		result;
-
-	result = 0;
-	if (!nbr)
-	{
-		write(1, "(null)", 6);
-		return(6);
-	}
-		
-	result += ft_putstr("0x");
-	result += ft_putnbrhex(nbr, 'x');
-	return (result);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }

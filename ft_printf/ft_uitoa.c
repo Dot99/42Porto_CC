@@ -6,11 +6,11 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:31:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/15 12:50:12 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:31:03 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 
 unsigned int	ft_usize(unsigned int nbr)
 {
@@ -25,12 +25,13 @@ unsigned int	ft_usize(unsigned int nbr)
 	return (count);
 }
 
-int	ft_utoa(unsigned int nbr)
+int	ft_uitoa(unsigned int nbr)
 {
 	char	*newstr;
-	int		size;
+	unsigned int	size;
 	int		result;
 
+	result = 0;
 	size = ft_usize(nbr);
 	newstr = (char *)malloc(sizeof(char) * (1 + size));
 	if (!newstr)
@@ -42,7 +43,7 @@ int	ft_utoa(unsigned int nbr)
 		newstr[size] = (nbr % 10) + 48;
 		nbr /= 10;
 	}
-	result = ft_putstr(newstr);
+	result = ft_printstr(newstr);
 	free(newstr);
 	return (result);
 }

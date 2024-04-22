@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbrhex.c                                     :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 10:18:47 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/15 11:44:55 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/04/09 12:17:11 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/04/18 09:04:53 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "libft.h"
 
-int	ft_putnbrhex(unsigned int nb, const char c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned int	nbr;
-	char	*base;
-	
-	nbr = 0;
-	if (c == 'x')
-		base = "0123456789abcdef";
-	else
-		base = "0123456789ABCDF";
-	if(nb >= 16)
+	size_t	i;
+
+	i = 0;
+	while (i < n)
 	{
-		nbr += ft_putnbrhex((nbr / 16), c);
-		nbr += ft_putnbrhex((nbr & 16), c);
+		if (*(unsigned char *)(s + i) == (unsigned char)c)
+			return ((void *)(s + i));
+		i++;
 	}
-	else
-	{
-		nbr += write(1, &base[nbr], 1);
-	}
-	
-	return(nbr);
+	return (NULL);
 }

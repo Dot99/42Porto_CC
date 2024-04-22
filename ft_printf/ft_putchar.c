@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 10:11:39 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/15 12:31:24 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/04/15 10:06:41 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/04/18 11:41:10 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_putchar(char c)
 {
-	int	i;
-
-	i = 0;
-	if (!s)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	while(s[i])
-	{
-		write(1, &s[i], i);
-		i++;
-	}
-	return(i);
+	write (1, &c, 1);
+	return (1);
 }

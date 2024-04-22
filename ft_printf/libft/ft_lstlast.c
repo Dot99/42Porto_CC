@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 10:06:41 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/15 12:03:47 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/04/09 12:16:56 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/04/09 14:54:55 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "libft.h"
 
-int	ft_putchar(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	write (1, &c, 1);
-	return (1);
+	while (lst)
+	{
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
 }

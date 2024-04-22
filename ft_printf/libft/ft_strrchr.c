@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 09:56:52 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/15 12:52:23 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/04/09 12:18:22 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/04/10 12:45:10 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
-# include <string.h>
-# include <unistd.h>
-# include <stdlib.h>
+char	*ft_strrchr(const char *s, int c)
+{
+	int	i;
 
-int	ft_printf(const char *str, ...);
-int	ft_putchar(int c);
-int	ft_putnbr(int nbr);
-int	ft_putnbrhex(unsigned int nbr, const char c);
-int	ft_putptr(unsigned long nbr);
-int	ft_putstr(char *str);
-int	ft_utoa(unsigned int nbr);
-
-#endif
+	i = 0;
+	while (s[i])
+		i++;
+	while (i >= 0)
+	{
+		if (s[i] == (char )c)
+			return ((char *)(s + i));
+		i--;
+	}
+	return (NULL);
+}
