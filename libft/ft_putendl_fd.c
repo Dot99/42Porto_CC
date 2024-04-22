@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:17:25 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/18 10:05:53 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/22 08:42:10 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if(!s)
+	if (!s)
 		return ;
 	write (fd, s, ft_strlen(s));
 	write (fd, "\n", 1);
