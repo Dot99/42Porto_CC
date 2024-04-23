@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 10:35:41 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/22 12:24:57 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/23 10:21:56 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putptr(void *nbr)
 {
-	int		result;
+	int				result;
 	unsigned long	n;
 
 	n = (unsigned long)nbr;
@@ -22,7 +22,7 @@ int	ft_putptr(void *nbr)
 	if (!n)
 	{
 		write(1, "(nil)", 5);
-		return(6);
+		return (6);
 	}
 	result += ft_printstr("0x");
 	if (n == 0)

@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:31:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/18 12:31:03 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/23 10:22:08 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ unsigned int	ft_usize(unsigned int nbr)
 
 int	ft_uitoa(unsigned int nbr)
 {
-	char	*newstr;
+	char			*newstr;
 	unsigned int	size;
-	int		result;
+	int				result;
 
 	result = 0;
 	size = ft_usize(nbr);

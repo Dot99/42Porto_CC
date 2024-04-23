@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 10:18:47 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/16 12:40:00 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/23 10:21:30 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ void	ft_put_hex(unsigned int num, const char c)
 	}
 }
 
-int ft_putnbrhex(unsigned int num, const char c)
+int	ft_putnbrhex(unsigned int num, const char c)
 {
-	if(num == 0)
-		return(write(1,"0",1));
+	if (num == 0)
+		return (write(1, "0", 1));
 	else
 		ft_put_hex(num, c);
-	return(ft_hex_len(num));
+	return (ft_hex_len(num));
 }
