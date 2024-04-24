@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 09:01:42 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/15 09:07:02 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/23 10:01:23 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	**ft_split_words(char const *s, char c, char **s2, int num_words)
 			word_len++;
 		}
 		s2[word] = (char *)malloc(sizeof(char) * (word_len + 1));
-		if (!s2)
+		if (!s2[word])
 			return (free_array(s2, word));
 		ft_putword(s2[word], s, i, word_len);
 		word_len = 0;

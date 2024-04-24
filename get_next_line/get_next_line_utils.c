@@ -1,40 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 12:05:29 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/23 10:00:13 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/04/24 08:59:35 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/04/24 12:48:54 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+# include "get_next_line.h"
 
-int	ft_atoi(const char *str)
+int	ft_strclen(char *str, char c)
 {
-	int	number;
 	int	i;
-	int	negative;
 
 	i = 0;
-	negative = 1;
-	number = 0;
-	while ((str[i] <= 13 && str[i] >= 9) || (str[i] == 32))
-		i++;
-	if ((str[i] == 43) || (str[i] == 45))
-	{
-		if (str[i] == 45)
-			negative *= -1;
-		i++;
-	}
-	if ((str[i] == 43) || (str[i] == 45))
+	if (!str)
 		return (0);
-	while (str[i] >= '0' && str[i] <= '9')
+	while ((str[i] && str[i] != c))
+		i++;
+	return (i);
+}
+
+char	*ft_strchr(char *str, char c)
+{
+	int	i;
+	int	size;
+
+	if (!str)
+		return (NULL);
+	i = 0;
+	size = ft_strclen(str, '\0');
+	while (str[i])
 	{
-		number = (number * 10) + (str[i] - 48);
+		if (str[i] == c)
+			break ;
 		i++;
 	}
-	return (number * negative);
+	if (c == '\0')
+		return (str + i);
+	if (size <= i)
+		return (NULL);
+	return (str + i);
 }

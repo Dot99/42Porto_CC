@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:05:29 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/17 09:26:00 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/23 10:00:13 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	negative = 1;
 	number = 0;
-	while ((str[i] <= 13 && str[i] >= 8) || (str[i] == 32))
+	while ((str[i] <= 13 && str[i] >= 9) || (str[i] == 32))
 		i++;
 	if ((str[i] == 43) || (str[i] == 45))
 	{
