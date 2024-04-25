@@ -6,42 +6,86 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 08:59:35 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/24 12:48:54 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/25 11:30:57 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "get_next_line.h"
 
-int	ft_strclen(char *str, char c)
+size_t	ft_strlen(char *s)
 {
 	int	i;
 
 	i = 0;
-	if (!str)
-		return (0);
-	while ((str[i] && str[i] != c))
+	while (s[i])
 		i++;
 	return (i);
 }
 
-char	*ft_strchr(char *str, char c)
+char	*ft_substr(char *s, unsigned int start, size_t len)
 {
-	int	i;
-	int	size;
+	size_t	i;
+	char	*str;
 
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (malloc(1));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = 0;
-	size = ft_strclen(str, '\0');
-	while (str[i])
+	while (i < len)
 	{
-		if (str[i] == c)
-			break ;
+		str[i] = s[start + i];
 		i++;
 	}
-	if (c == '\0')
-		return (str + i);
-	if (size <= i)
+	str[i] = 0;
+	return (str);
+}
+
+char	*ft_strdup(char *s1)
+{
+	char			*dest;
+	unsigned int	i;
+
+	dest = (char *) malloc(ft_strlen(s1) + 1);
+	if (!dest)
 		return (NULL);
-	return (str + i);
+	i = 0;
+	while (s1[i])
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	dest[i] = 0;
+	return (dest);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	char			*res;
+
+	res = (char *) malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!res)
+		return (NULL);
+	fill_str(res, s1, s2);
+	return (res);
+}
+
+void	fill_str(char *res, char *s1, char *s2)
+{
+	unsigned int	i;
+	unsigned int	j;
+
+	i = 0;
+	j = 0;
+	while (s1[j])
+		res[i++] = s1[j++];
+	j = 0;
+	while (s2[j])
+		res[i++] = s2[j++];
+	res[i] = '\0';
 }
