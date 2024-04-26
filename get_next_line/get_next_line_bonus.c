@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 08:59:37 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/25 15:05:12 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/26 08:45:52 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*_fill_line_buffer(int fd, char *left_c, char *buffer);
 static char	*_set_line(char *line);
@@ -18,34 +18,34 @@ static char	*ft_strchr(char *s, int c);
 
 char	*get_next_line(int fd)
 {
-	static char	*left_c;
+	static char	*left_c[MAX_FD];
 	char		*line;
 	char		*buffer;
 
 	buffer = (char *)malloc ((BUFFER_SIZE + 1) * sizeof(char));
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 	{
-		free(left_c);
+		free(left_c[fd]);
 		free(buffer);
-		left_c = NULL;
+		left_c[fd] = NULL;
 		buffer = NULL;
 		return (NULL);
 	}
 	if (!buffer)
 		return (NULL);
-	line = _fill_line_buffer(fd, left_c, buffer);
+	line = _fill_line_buffer(fd, left_c[fd], buffer);
 	free(buffer);
 	buffer = NULL;
 	if (!line)
 		return (NULL);
-	left_c = _set_line(line);
+	left_c[fd] = _set_line(line);
 	return (line);
 }
 
 static char	*_set_line(char *line_buffer)
 {
-	char	*left_c;
-	ssize_t	i;
+	char		*left_c;
+	ssize_t		i;
 
 	i = 0;
 	while (line_buffer[i] != '\n' && line_buffer[i] != '\0')
@@ -111,10 +111,14 @@ static char	*ft_strchr(char *s, int c)
 // int main()
 // {
 // 	int fd = open("test.txt", O_RDONLY);
+// 	int fd1 = open("test1.txt", O_RDONLY);
+// 	int fd2 = open("test2.txt", O_RDONLY);
 // 	int i = 0;
 // 	while(i < 2)
 // 	{
 // 		printf("%s", get_next_line(fd));
+// 		printf("%s", get_next_line(fd1));
+// 		printf("%s", get_next_line(fd2));
 // 		i++;
 // 	}
 // 	return(0);
