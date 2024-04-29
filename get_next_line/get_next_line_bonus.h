@@ -6,14 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 08:59:40 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/25 15:00:41 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:43:47 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 15
+#  define BUFFER_SIZE 42
 # endif
 # define MAX_FD 1024
 # include <stdlib.h>
