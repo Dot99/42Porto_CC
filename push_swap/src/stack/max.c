@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   midpoint_sort.c                                    :+:      :+:    :+:   */
+/*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 11:59:20 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/07 08:33:53 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/05/06 12:47:03 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/05/06 12:47:10 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int find_midpoint()
+int	max(t_stack *stack)
 {
-		
-}
+	int	max;
+	int	i;
 
-void midpoint_sort(t_stack *a, t_stack *b)
-{
-
+	max = stack->storage[BOTTOM];
+	i = 0;
+	while (i < stack->top)
+	{
+		if (stack->storage[i] > max)
+			max = stack->storage[i];
+		i += 1;
+	}
+	return (max);
 }

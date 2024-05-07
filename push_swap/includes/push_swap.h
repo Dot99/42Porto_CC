@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 08:45:53 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/06 11:51:06 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/07 10:11:49 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <fcntl.h>
 
 # include "../libft/libft.h"
-
+// STACK ---------
 typedef struct s_stack {
 	int	stack_size;
 	int	*storage;
@@ -41,8 +41,42 @@ static inline t_stack	init_stack(int arr_len)
 	});
 }
 
+// ------------------------INSTRUCTIONS --------------------------------------
+// ----------------------------SWAP ------------------------------------------
+
+// Swaps the first 2 elements of stack a
+void	sa(t_stack *a, bool print_instruction);
+// Swaps the first 2 elements of stack b
+void	sb(t_stack *b, bool print_instruction);
+// sa + sb
+void	ss(t_stack *a, t_stack *b);
+
+//----------------------------- PUSH -----------------------------------------
+
+// Pops the top element of stack b into stack a
+void	pa(t_stack *a, t_stack *b);
+// Pops the top element of stack a into stack b
+void	pb(t_stack *a, t_stack *b);
+
+//---------------------------- ROTATE ---------------------------------------
+
+// Shifts up all elements on stack a by 1
+void	ra(t_stack *a, bool print_instruction);
+// Shifts up all elements on stack b by 1
+void	rb(t_stack *b, bool print_instruction);
+// ra + rb
+void	rr(t_stack *a, t_stack *b);
+// Shifts down all elements on stack a by 1
+void	rra(t_stack *a, bool print_instruction);
+// Shifts down all elements on stack b by 1
+void	rrb(t_stack *b, bool print_instruction);
+// ra + rb
+void	rrr(t_stack *a, t_stack *b);
+
+
 int		*parse_input(int argc, char **argv, t_stack *a);
 
+//-------------------------- STACK UTILS ---------------------------------------
 // Fills stack a with input values
 void	fill_a(t_stack *a, int *int_arr, int argc);
 
