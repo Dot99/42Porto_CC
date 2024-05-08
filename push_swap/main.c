@@ -6,13 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:30:17 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/08 12:08:53 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:58:35 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack	a;
 	t_stack	b;

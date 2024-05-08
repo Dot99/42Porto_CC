@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:59:23 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/08 12:09:32 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:57:30 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,16 +82,16 @@ void	radix_sort(t_stack *a, t_stack *b)
 	i = -1;
     while (++i < max_bits)
     {
-        j = -1;
-        while (!is_sorted(a) && (++j < a->stack_size))
-        {
-            max_value = a->storage[a->top];
-            if (((max_value >> i) & 0b00000001) == 1)
-                ra(a, true);
-            else
-                pb(a, b, true);
-        }
-        while (!is_empty(b))
-            pa(a, b, true);
-    }
+		j = -1;
+		while (!is_sorted(a) && (++j < a->stack_size))
+		{
+			max_value = a->storage[a->top];
+			if (((max_value >> i) & 0b00000001) == 1)
+				ra(a, true);
+			else
+				pb(a, b, true);
+		}
+		while (!is_empty(b))
+			pa(a, b, true);
+	}
 }

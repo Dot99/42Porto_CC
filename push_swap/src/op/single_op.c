@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 08:40:07 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/07 10:03:04 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:02:51 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void sa(t_stack *a, bool print_inst)
 {
 	int tmp;
 	
-	if(is_empty(a) || a->top == 0)
+	if (is_empty(a) || a->top == 0)
 		return ;
 	tmp = a->storage[a->top -1];
 	a->storage[a->top -1 ] = a->storage[a->top];
