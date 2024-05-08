@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:59:23 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/07 13:01:54 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:09:32 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	insertion_sort(int *arr, int size)
 	}
 }
 
-static int sort_arr(t_stack *stack)
+static int *sort_arr(t_stack *stack)
 {
 	int *sorted_arr;
 	int i;
@@ -67,14 +67,31 @@ static void index(t_stack *stack, int *sort_arr)
 	}
 }
 
-void	radix(t_stack *a, t_stack *b)
+void	radix_sort(t_stack *a, t_stack *b)
 {
 	int max_bits;
 	int	max_value;
+	int i;
+	int j;
 
+	index(a, sort_arr(a));
 	max_bits = 0;
 	max_value = max(a);
 	while(max_value >> max_bits != 0)
 		max_bits++;
-	index(a, sort_arr(a));
+	i = -1;
+    while (++i < max_bits)
+    {
+        j = -1;
+        while (!is_sorted(a) && (++j < a->stack_size))
+        {
+            max_value = a->storage[a->top];
+            if (((max_value >> i) & 0b00000001) == 1)
+                ra(a, true);
+            else
+                pb(a, b, true);
+        }
+        while (!is_empty(b))
+            pa(a, b, true);
+    }
 }

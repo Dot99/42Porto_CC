@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:38:44 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/06 11:11:42 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:06:18 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static bool has_duplicates(int *storage, int arr_len)
 	return(false);
 }
 
-static int conv_a_to_i(t_stack *a, int argc, char **argv)
+static int *conv_a_to_i(t_stack *a, int argc, char **argv)
 {
 	int	*int_list;
 	int i;
@@ -78,7 +78,7 @@ static bool is_alldigits(char **argv)
 	return (true);
 }
 
-int parse_input(int argc, char **argv, t_stack *a)
+int *parse_input(int argc, char **argv, t_stack *a)
 {
 	int	*storage;
 

@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 08:45:53 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/07 10:11:49 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:08:35 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	ss(t_stack *a, t_stack *b);
 //----------------------------- PUSH -----------------------------------------
 
 // Pops the top element of stack b into stack a
-void	pa(t_stack *a, t_stack *b);
+void	pa(t_stack *a, t_stack *b, bool print_instruction);
 // Pops the top element of stack a into stack b
-void	pb(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b, bool print_instruction);
 
 //---------------------------- ROTATE ---------------------------------------
 
@@ -104,4 +104,8 @@ void	free_stacks(t_stack *a, t_stack *b);
 // Frees both stack storages if they're not NULL
 // prints Error to STDERR and exit on EXIT_FAILURE
 void	dead(t_stack *a, t_stack *b);
+
+void	bubble_sort(t_stack *a);
+void	radix_sort(t_stack *a, t_stack *b);
+void	midpoint_sort(t_stack *a, t_stack *b);
 #endif
