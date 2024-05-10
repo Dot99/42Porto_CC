@@ -6,83 +6,72 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 08:59:37 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/03 09:57:01 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/10 12:56:51 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*free_data(char *stash, char *buffer)
-{
-	free(stash);
-	free(buffer);
-	return (NULL);
-}
-
-char	*read_from_file(int fd, char *stash)
-{
-	char	*buffer;
-	int		read_size;
-
-	read_size = BUFFER_SIZE;
-	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
-		return (NULL);
-	*buffer = 0;
-	while (read_size != 0 && !ft_strchr(buffer, '\n'))
-	{
-		read_size = read(fd, buffer, BUFFER_SIZE);
-		if (read_size < 0)
-			return (free_data(stash, buffer));
-		buffer[read_size] = '\0';
-		stash = ft_strjoin(stash, buffer);
-	}
-	if (read_size == -1 || *stash == '\0')
-		return (free_data(stash, buffer));
-	free(buffer);
-	return (stash);
-}
-
-char	*leftovers(char *stash)
+static char	*_set_line(char *line_buffer)
 {
 	char	*leftover;
 
-	leftover = ft_strndup(stash + ft_strclen(stash, '\n')
-			+ 1, ft_strclen(stash, '\0') - ft_strclen(stash, '\n'));
-	free (stash);
+	leftover = ft_strndup(line_buffer + ft_strclen(line_buffer, '\n')
+			+ 1, ft_strclen(line_buffer, '\0') - ft_strclen(line_buffer, '\n'));
+	free (line_buffer);
 	if (!leftover)
 		return (NULL);
 	return (leftover);
 }
 
+static char	*_fill_line_buffer(int fd, char *left_c)
+{
+	ssize_t	b_read;
+	char	*buffer;
+
+	b_read = 1;
+	buffer = (char *)malloc ((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer)
+		return (NULL);
+	*buffer = 0;
+	while (b_read > 0 && !ft_strchr(buffer, '\n'))
+	{
+		b_read = read(fd, buffer, BUFFER_SIZE);
+		if (b_read == -1)
+			return (free_data(buffer, left_c));
+		buffer[b_read] = '\0';
+		left_c = ft_strjoin(left_c, buffer);
+	}
+	if (*left_c == '\0')
+		return (free_data(buffer, left_c));
+	free(buffer);
+	return (left_c);
+}
+
+char	*free_data(char *buffer, char *left_c)
+{
+	free(buffer);
+	free(left_c);
+	return (NULL);
+}
+
 char	*get_next_line(int fd)
 {
-	static char	*stash;
-	char		*new_line;
+	static char	*left_c;
+	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (!stash)
-		stash = NULL;
-	stash = read_from_file(fd, stash);
-	if (!stash)
+	if (!left_c)
+		left_c = NULL;
+	left_c = _fill_line_buffer(fd, left_c);
+	if (!left_c)
 		return (NULL);
-	new_line = ft_strndup(stash, ft_strclen(stash, '\n') + 1);
-	if (!new_line)
+	line = ft_strndup(left_c, ft_strclen(left_c, '\n') + 1);
+	if (!line)
 		return (NULL);
-	stash = leftovers(stash);
-	if (!stash)
-		free(stash);
-	return (new_line);
+	left_c = _set_line(left_c);
+	if (!left_c)
+		free(left_c);
+	return (line);
 }
-// int main()
-// {
-// 	int fd = open("test.txt", O_RDONLY);
-// 	int i = 0;
-// 	while(i < 2)
-// 	{
-// 		printf("%s", get_next_line(fd));
-// 		i++;
-// 	}
-// 	return(0);
-// }

@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 08:59:40 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/03 09:57:12 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/10 12:50:17 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 42
 # endif
 
 # include <stdlib.h>
-# include <unistd.h>
 # include <stdio.h>
+# include <unistd.h>
 # include <fcntl.h>
 
 char	*ft_strchr(char *str, char c);

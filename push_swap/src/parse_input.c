@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:38:44 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/08 13:00:59 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:06:16 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,17 @@ static bool	is_alldigits(char **argv)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 1;
+	// while(argv[i])
+	// {
+	// 	j = 0;
+	// 	while(argv[i][j])
+	// 	{
+	// 		printf("%c -> %d\n", argv[i][j], ft_isdigit(argv[i][j]));
+	// 		j++;
+	// 	}
+	// 	i++;
+	// }
 	while (argv[i])
 	{
 		j = 0;
@@ -81,7 +91,6 @@ static bool	is_alldigits(char **argv)
 int	*parse_input(int argc, char **argv, t_stack *a)
 {
 	int	*storage;
-
 	if (!is_alldigits(argv))
 		dead(a, NULL);
 	storage = conv_a_to_i(a, argc, argv);
