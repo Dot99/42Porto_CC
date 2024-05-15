@@ -6,7 +6,7 @@
 #    By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 08:45:55 by gude-jes          #+#    #+#              #
-#    Updated: 2024/05/08 11:55:02 by gude-jes         ###   ########.fr        #
+#    Updated: 2024/05/15 12:24:57 by gude-jes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ VPATH = src src/algos src/op\
 LIBFT = ./libft/libft.a
 RM = rm -rf
 
-ALGOS = midpoint_sort radix_sort bubble
+ALGOS = radix_sort bubble
 INSTRUCTIONS = double_op single_op single_op2
 STACK = free_stacks is_sorted max stack_utils
 UTILS = fill_a dead

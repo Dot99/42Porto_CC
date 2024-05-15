@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 08:45:53 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/08 12:08:35 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/15 12:24:31 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,4 @@ void	dead(t_stack *a, t_stack *b);
 
 void	bubble_sort(t_stack *a);
 void	radix_sort(t_stack *a, t_stack *b);
-void	midpoint_sort(t_stack *a, t_stack *b);
 #endif

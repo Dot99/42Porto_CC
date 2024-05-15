@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:38:44 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/09 12:06:16 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/14 10:21:42 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,23 +63,16 @@ static bool	is_alldigits(char **argv)
 	int	j;
 
 	i = 1;
-	// while(argv[i])
-	// {
-	// 	j = 0;
-	// 	while(argv[i][j])
-	// 	{
-	// 		printf("%c -> %d\n", argv[i][j], ft_isdigit(argv[i][j]));
-	// 		j++;
-	// 	}
-	// 	i++;
-	// }
 	while (argv[i])
 	{
 		j = 0;
+		if (argv[i][j] == '-')
+			j++;
+		if (argv[i][j] == '\0')
+			return (false);
 		while (argv[i][j])
 		{
-			if ((!ft_isdigit(argv[i][j]) && argv[i][j] != '-') ||
-				(!ft_isdigit(argv[i][j + 1] && argv[i][j] == '-')))
+			if (!ft_isdigit(argv[i][j]))
 				return (false);
 			j++;
 		}

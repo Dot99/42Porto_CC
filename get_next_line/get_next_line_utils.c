@@ -6,33 +6,11 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 08:59:35 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/03 09:57:31 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/15 08:21:00 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-char	*ft_strchr(char *str, char c)
-{
-	int	i;
-	int	size;
-
-	if (!str)
-		return (NULL);
-	i = 0;
-	size = ft_strclen(str, '\0');
-	while (str[i])
-	{
-		if (str[i] == c)
-			break ;
-		i++;
-	}
-	if (c == '\0')
-		return (str + i);
-	if (size <= i)
-		return (NULL);
-	return (str + i);
-}
 
 char	*ft_strjoin(char *s1, char *s2)
 {
@@ -90,4 +68,26 @@ char	*ft_strndup(char *s, int len)
 	}
 	str[i] = '\0';
 	return (str);
+}
+
+char	*ft_strchr(char *str, char c)
+{
+	int	i;
+	int	size;
+
+	if (!str)
+		return (NULL);
+	i = 0;
+	size = ft_strclen(str, '\0');
+	while (str[i])
+	{
+		if (str[i] == c)
+			break ;
+		i++;
+	}
+	if (c == '\0')
+		return (str + i);
+	if (size <= i)
+		return (NULL);
+	return (str + i);
 }

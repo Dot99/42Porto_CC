@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:14:29 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/09 11:33:48 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/14 11:14:55 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	fill_a(t_stack *a, int *int_arr, int argc)
 {
 	int	i;
-	i = (argc - 1) - 1;
+	i = (argc - 1);
 	while (i >= 0)
 	{
 		push(a, int_arr[i]);

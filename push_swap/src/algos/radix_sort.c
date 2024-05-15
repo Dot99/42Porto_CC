@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:59:23 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/08 12:57:30 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/15 12:26:51 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static void index(t_stack *stack, int *sort_arr)
 	int i;
 	int *temp;
 	int j;
-	
+
 	i = -1;
 	temp = malloc(stack->stack_size * sizeof(int));
 	while (++i < stack->stack_size)
