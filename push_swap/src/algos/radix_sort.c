@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:59:23 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/15 12:26:51 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:49:29 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int *sort_arr(t_stack *stack)
 	return (sorted_arr);
 }
 
-static void index(t_stack *stack, int *sort_arr)
+static void index(t_stack *stack, int *sort_arr) //Needs change
 {
 	int i;
 	int *temp;
@@ -86,7 +86,7 @@ void	radix_sort(t_stack *a, t_stack *b)
 		while (!is_sorted(a) && (++j < a->stack_size))
 		{
 			max_value = a->storage[a->top];
-			if (((max_value >> i) & 0b00000001) == 1)
+			if (((max_value >> i) & 1) == 1)
 				ra(a, true);
 			else
 				pb(a, b, true);
