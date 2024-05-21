@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:47:03 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/08 13:02:01 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/21 09:31:08 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	max(t_stack *stack)
 	int	i;
 
 	max = stack->storage[BOTTOM];
-	i = 0;
+	i = BOTTOM;
 	while (i < stack->top)
 	{
 		if (stack->storage[i] > max)

@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:30:17 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/15 12:23:54 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/20 12:56:07 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	main(int argc, char **argv)
 	if (!is_sorted(&a))
 	{
 
-		if (a.stack_size == 3)
-			bubble_sort(&a);
+		if (a.stack_size <= 5)
+			specific(&a, &b);
 		else
 			radix_sort(&a, &b);
 	}

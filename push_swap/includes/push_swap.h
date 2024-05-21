@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 08:45:53 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/15 12:24:31 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/20 12:56:19 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,9 @@ bool	is_sorted(t_stack *stack);
 // Finds the max value within the stack
 int		max(t_stack *stack);
 
+// Finds the min value within the stack
+int		min(t_stack *stack);
+
 // Pushes A value to the top of the stack
 void	push(t_stack *stack, int value);
 
@@ -105,6 +108,8 @@ void	free_stacks(t_stack *a, t_stack *b);
 // prints Error to STDERR and exit on EXIT_FAILURE
 void	dead(t_stack *a, t_stack *b);
 
-void	bubble_sort(t_stack *a);
+//Algos
+void	specific(t_stack *a, t_stack *b);
+void	counting_sort(int *arr, int size);
 void	radix_sort(t_stack *a, t_stack *b);
 #endif

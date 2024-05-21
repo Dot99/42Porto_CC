@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bubble.c                                           :+:      :+:    :+:   */
+/*   min.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 11:53:40 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/14 12:52:07 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/05/20 12:38:48 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/05/20 12:41:11 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void bubble_sort(t_stack *a)
+int	min(t_stack *stack)
 {
-	if (a->storage[a->top] > a->storage[a->top - 1])
-		sa(a, true);
-	if (a->storage[a->top - 1] > a->storage[a->top - 2])
+	int min;
+	int i;
+
+	i = stack->top;
+	min = stack->storage[stack->top];
+	while (i >= 0)
 	{
-		ra(a, true);
-		if (a->storage[a->top] > a->storage[a->top - 1])
-			sa(a, true);
-		rra(a, true);
+		if(stack->storage[i] < min)
+			min = stack->storage[i];
+		i--;
 	}
-	if (a->storage[a->top] > a->storage[a->top - 1])
-		sa(a, true);
+	return(min);
 }

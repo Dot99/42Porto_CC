@@ -6,32 +6,11 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:59:23 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/17 12:00:38 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/20 12:02:46 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	insertion_sort(int *arr, int size)
-{
-	int i;
-	int key;
-	int j;
-
-	i = 1;
-	while (i < size)
-	{
-		key = arr[i];
-		j = i - 1;
-		while (j >= 0 && arr[j] > key)
-		{
-			arr[j + 1] = arr[j];
-			j = j - 1;
-		}
-		arr[j + 1] = key;
-		i++;
-	}
-}
 
 static int *sort_arr(t_stack *stack)
 {
@@ -45,25 +24,27 @@ static int *sort_arr(t_stack *stack)
 		sorted_arr[i] = stack->storage[i];
 		i++;
 	}
-	insertion_sort(sorted_arr, stack->stack_size);
+	counting_sort(sorted_arr, stack->stack_size);
 	return (sorted_arr);
 }
 
-static void index(t_stack *stack, int *sort_arr)
+static void index(t_stack *stack, int *sorted_arr)
 {
 	int i;
-	int *temp;
+	int *index_map;
 
+	index_map = malloc((max(stack) + 1) * sizeof(int));
 	i = -1;
-	temp = malloc((max(stack) + 1) * sizeof(int));
+	while (++i <= max(stack))
+		index_map[i] = 0;
+	i = -1;
 	while (++i < stack->stack_size)
-		temp[sort_arr[i]] = i;
+		index_map[sorted_arr[i]] = i + 1;
 	i = -1;
-	while(++i < stack->stack_size)
-		stack->storage[i] = temp[stack->storage[i]];
-	free(temp);
+	while (++i < stack->stack_size)
+		stack->storage[i] = index_map[stack->storage[i]];
+	free(index_map);
 }
-
 
 void	radix_sort(t_stack *a, t_stack *b)
 {
@@ -78,10 +59,10 @@ void	radix_sort(t_stack *a, t_stack *b)
 	while(value >> max_bits != 0)
 		max_bits++;
 	i = -1;
-    while (++i < max_bits)
+    while (++i < max_bits && !is_sorted(a))
     {
 		j = -1;
-		while (++j < a->stack_size)
+		while (++j < a->stack_size && !is_sorted(a))
 		{
 			value = a->storage[a->top];
 			if (((value >> i) & 1) == 1)
