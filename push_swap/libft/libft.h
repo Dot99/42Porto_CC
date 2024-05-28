@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 13:37:27 by dot               #+#    #+#             */
-/*   Updated: 2024/04/17 09:47:36 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/27 09:35:02 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 int		ft_atoi(const char *str);
+ssize_t	ft_atol(const char *str);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);

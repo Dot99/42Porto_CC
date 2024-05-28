@@ -6,12 +6,12 @@
 #    By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 12:18:36 by gude-jes          #+#    #+#              #
-#    Updated: 2024/04/22 10:10:57 by gude-jes         ###   ########.fr        #
+#    Updated: 2024/05/27 09:36:55 by gude-jes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
-					ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \
+					ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_atol.c ft_isalpha.c \
 					ft_itoa.c ft_memcpy.c  ft_putendl_fd.c ft_strchr.c  ft_strlcpy.c \
 					ft_strnstr.c ft_tolower.c ft_bzero.c   ft_isascii.c ft_striteri.c \
 					ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strrchr.c \

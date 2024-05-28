@@ -6,12 +6,12 @@
 #    By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 08:45:55 by gude-jes          #+#    #+#              #
-#    Updated: 2024/05/20 12:48:06 by gude-jes         ###   ########.fr        #
+#    Updated: 2024/05/28 12:27:58 by gude-jes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall
 INC = -I./includes
 VPATH = src src/algos src/op\
 		src/stack src/utils
@@ -20,8 +20,8 @@ RM = rm -rf
 
 ALGOS = counting_sort radix_sort specific
 INSTRUCTIONS = double_op single_op single_op2
-STACK = free_stacks is_sorted max stack_utils min
-UTILS = fill_a dead
+STACK = frees is_sorted max stack_utils min
+UTILS = fill_a dead args_utils
 GENERAL = parse_input
 
 # PUSH_SWAP ---------------------------------------------

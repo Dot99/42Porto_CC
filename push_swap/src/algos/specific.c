@@ -6,17 +6,17 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:53:40 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/21 09:35:00 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/28 10:59:35 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_3(t_stack *a)
+void	sort_3(t_stack *a)
 {
-	int top;
-	int mid;
-	int bot;
+	int	top;
+	int	mid;
+	int	bot;
 
 	top = a->storage[a->top];
 	mid = a->storage[a->top -1];
@@ -39,13 +39,14 @@ void sort_3(t_stack *a)
 		sa(a, true);
 }
 
-void sort_4(t_stack *a, t_stack *b)
+void	sort_4(t_stack *a, t_stack *b)
 {
-	int min_value;
+	int	min_value;
+
 	min_value = min(a);
 	while (a->storage[a->top] != min_value)
 		ra(a, true);
-	if(!is_sorted(a))
+	if (!is_sorted(a))
 	{
 		pb(a, b, true);
 		sort_3(a);
@@ -53,10 +54,10 @@ void sort_4(t_stack *a, t_stack *b)
 	}
 }
 
-void sort_5(t_stack *a, t_stack *b)
+void	sort_5(t_stack *a, t_stack *b)
 {
-	int min_value;
-	
+	int	min_value;
+
 	min_value = min(a);
 	while (a->storage[a->top] != min_value)
 		ra(a, true);
@@ -65,7 +66,7 @@ void sort_5(t_stack *a, t_stack *b)
 	pa(a, b, true);
 }
 
-void specific(t_stack *a, t_stack *b)
+void	specific(t_stack *a, t_stack *b)
 {
 	if (a->stack_size == 3)
 		sort_3(a);

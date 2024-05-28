@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 08:45:53 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/20 12:56:19 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/28 12:27:48 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,21 @@
 
 # include "../libft/libft.h"
 // STACK ---------
-typedef struct s_stack {
+
+typedef struct s_stack
+{
 	int	stack_size;
 	int	*storage;
 	int	top;
 }				t_stack;
+
+// Counting sort struct -------
+typedef struct s_count_data
+{
+	int	*count;
+	int	*output;
+	int	min;
+}	t_count_data;
 
 # define BOTTOM 0
 
@@ -73,7 +83,6 @@ void	rrb(t_stack *b, bool print_instruction);
 // ra + rb
 void	rrr(t_stack *a, t_stack *b);
 
-
 int		*parse_input(int argc, char **argv, t_stack *a);
 
 //-------------------------- STACK UTILS ---------------------------------------
@@ -104,9 +113,16 @@ int		pop(t_stack *stack);
 // Frees both stack storages
 void	free_stacks(t_stack *a, t_stack *b);
 
+// Frees argv
+void	free_argv(char **argv);
+
 // Frees both stack storages if they're not NULL
 // prints Error to STDERR and exit on EXIT_FAILURE
 void	dead(t_stack *a, t_stack *b);
+
+// Handle argument stuff
+char	**handle_argv(char **argv, int argc);
+int		func_num_elem(char **argv);
 
 //Algos
 void	specific(t_stack *a, t_stack *b);

@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   double_op.c                                        :+:      :+:    :+:   */
+/*   args_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 08:50:08 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/24 10:52:15 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/05/28 09:18:07 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/05/28 12:30:45 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ss(t_stack *a, t_stack *b)
+char	**handle_argv(char **argv, int argc)
 {
-	sa(a, true);
-	sb(b, true);
-	ft_putstr_fd("ss\n", STDOUT_FILENO);
+	char	**new_argv;
+
+	new_argv = argv + 1;
+	if (argc == 2)
+	{
+		new_argv = ft_split(argv[1], ' ');
+		if (!new_argv)
+			dead(NULL, NULL);
+	}
+	return (new_argv);
 }
 
-void	rr(t_stack *a, t_stack *b)
+int	func_num_elem(char **argv)
 {
-	ra(a, true);
-	rb(b, true);
-	ft_putstr_fd("rr\n", STDOUT_FILENO);
-}
+	int	num_elem;
 
-void	rrr(t_stack *a, t_stack *b)
-{
-	rra(a, true);
-	rrb(b, true);
-	ft_putstr_fd("rrr\n", STDOUT_FILENO);
+	num_elem = 0;
+	while (argv[num_elem] != NULL)
+		num_elem++;
+	return (num_elem);
 }

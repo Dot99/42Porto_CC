@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:30:17 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/20 12:56:07 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/28 12:25:53 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,25 @@ int	main(int argc, char **argv)
 {
 	t_stack	a;
 	t_stack	b;
-	
+	int		num_elem;
+	char	**new_argv;
+
 	if (argc < 2)
 		return (EXIT_SUCCESS);
-	a = init_stack(argc - 1);
-
-	fill_a(&a, parse_input(argc, argv, &a), argc);
-	b = init_stack(argc - 1);
+	new_argv = handle_argv(argv, argc);
+	num_elem = func_num_elem(new_argv);
+	a = init_stack(num_elem);
+	fill_a(&a, parse_input(num_elem, new_argv, &a), num_elem);
+	b = init_stack(num_elem);
 	if (!is_sorted(&a))
 	{
-
 		if (a.stack_size <= 5)
 			specific(&a, &b);
 		else
 			radix_sort(&a, &b);
 	}
+	if (argc == 2)
+		free_argv(new_argv);
 	free_stacks(&a, &b);
 	return (EXIT_SUCCESS);
 }
