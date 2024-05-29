@@ -6,11 +6,17 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:53:40 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/28 10:59:35 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:05:29 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	sort_2(t_stack *a)
+{
+	if (a->storage[a->top] > a->storage[a->top -1])
+		ra(a, true);
+}
 
 void	sort_3(t_stack *a)
 {
@@ -68,7 +74,9 @@ void	sort_5(t_stack *a, t_stack *b)
 
 void	specific(t_stack *a, t_stack *b)
 {
-	if (a->stack_size == 3)
+	if (a->stack_size == 2)
+		sort_2(a);
+	else if (a->stack_size == 3)
 		sort_3(a);
 	else if (a->stack_size == 4)
 		sort_4(a, b);

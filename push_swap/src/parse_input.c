@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:38:44 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/28 12:17:06 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:13:58 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static bool	has_duplicates(int *storage, int arr_len)
 	while (i < arr_len)
 	{
 		j = i + 1;
-		while (j < arr_len)
+		while (j <= arr_len)
 		{
 			if (storage[i] == storage[j])
 				return (true);
