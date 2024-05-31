@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 10:32:12 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/03 11:27:46 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/31 12:57:02 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	ft_atob(int pid, char c)
 
 int	main(int argc, char **argv)
 {
-	int	pid;
-	int	i;
+	int		pid;
+	size_t	i;
 
 	i = 0;
 	if (argc == 3)
 	{
 		pid = ft_atoi(argv[1]);
-		while (argv[2][i] != '\0')
+		while (i <= ft_strlen(argv[2]))
 		{
 			ft_atob(pid, argv[2][i]);
 			i++;
