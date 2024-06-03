@@ -6,15 +6,15 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 09:33:24 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/27 09:37:33 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:41:00 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-ssize_t	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
-	ssize_t	number;
+	long	number;
 	int		i;
 	int		negative;
 

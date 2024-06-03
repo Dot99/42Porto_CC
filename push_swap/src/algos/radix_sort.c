@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:59:23 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/28 11:18:45 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/03 12:16:55 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	*sort_arr(t_stack *stack)
 	i = 0;
 	while (i < stack->stack_size)
 	{
-		sorted_arr[i] = stack->storage[i];
+		sorted_arr[i] = (stack->storage)[i];
 		i++;
 	}
 	counting_sort(sorted_arr, stack->stack_size);
@@ -37,12 +37,15 @@ static void	index(t_stack *stack, int *sorted_arr)
 	i = -1;
 	while (++i <= max(stack))
 		index_map[i] = 0;
+	i = 0;
+	while (i < stack->stack_size)
+	{
+		index_map[sorted_arr[i] - min(stack)] = i + 1;
+		i++;
+	}
 	i = -1;
 	while (++i < stack->stack_size)
-		index_map[sorted_arr[i]] = i + 1;
-	i = -1;
-	while (++i < stack->stack_size)
-		stack->storage[i] = index_map[stack->storage[i]];
+		stack->storage[i] = index_map[stack->storage[i] - min(stack)];
 	free(index_map);
 }
 

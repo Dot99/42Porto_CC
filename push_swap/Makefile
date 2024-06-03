@@ -6,12 +6,12 @@
 #    By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 08:45:55 by gude-jes          #+#    #+#              #
-#    Updated: 2024/05/28 12:27:58 by gude-jes         ###   ########.fr        #
+#    Updated: 2024/06/03 12:19:41 by gude-jes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall
+CFLAGS = -Wall -Wextra -Werror
 INC = -I./includes
 VPATH = src src/algos src/op\
 		src/stack src/utils
