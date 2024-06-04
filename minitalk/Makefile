@@ -6,7 +6,7 @@
 #    By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 12:18:36 by gude-jes          #+#    #+#              #
-#    Updated: 2024/05/29 08:31:31 by gude-jes         ###   ########.fr        #
+#    Updated: 2024/06/04 12:13:23 by gude-jes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,3 +50,5 @@ fclean : clean
 re : fclean all
 
 .PHONY:		all clean fclean re
+
+.SILENT:

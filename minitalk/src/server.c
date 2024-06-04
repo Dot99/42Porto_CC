@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 10:32:10 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/03 12:48:19 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:12:31 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@ char	*ft_strcjoin(char const *s1, char c)
 		size = 0;
 	newstring = (char *)malloc(sizeof(char) * (size + 2));
 	if (!newstring)
+	{
+		free(newstring);
 		return (NULL);
+	}
 	i = -1;
 	while (s1[++i])
 		newstring[i] = s1[i];
 	newstring[i++] = c;
 	newstring[i] = '\0';
-	if(s1)
-		free((char *)s1);
 	return (newstring);
 }
 
@@ -39,28 +40,28 @@ void	ft_btoa(int sig)
 {
 	static int	bit;
 	static int	i;
-	static char *str;
+	static char	*str;
+	char		*temp;
 
 	if (!str)
-	{
-		str = (char *)malloc(sizeof(char));
-		if (!str)
-			return ;
-		*str = '\0';
-	}
+		str = ft_calloc(1, 1);
 	if (sig == SIGUSR1)
 		i |= (0x01 << bit);
 	bit++;
-    if (bit == 8) {
-        str = ft_strcjoin(str, (char)i);
-        if (i == 0) {
-            ft_printf("%s\n", str);
-            free(str);
-            str = NULL;
-        }
-        bit = 0;
-        i = 0;
-    }
+	if (bit == 8)
+	{
+		temp = ft_strcjoin(str, (char)i);
+		free(str);
+		str = temp;
+		if (i == 0)
+		{
+			ft_printf("%s\n", str);
+			free(str);
+			str = NULL;
+		}
+		bit = 0;
+		i = 0;
+	}
 }
 
 int	main(int argc, char **argv)
