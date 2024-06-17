@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 08:45:53 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/05/28 12:27:48 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/17 08:43:04 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ typedef struct s_stack
 // Counting sort struct -------
 typedef struct s_count_data
 {
-	int	*count;
-	int	*output;
-	int	min;
+	size_t	*count;
+	int		*output;
+	int		min;
 }	t_count_data;
 
 # define BOTTOM 0
@@ -126,6 +126,7 @@ int		func_num_elem(char **argv);
 
 //Algos
 void	specific(t_stack *a, t_stack *b);
-void	counting_sort(int *arr, int size);
+//void	counting_sort(int *arr, int size);
+void	insertion_sort(int *storage, int chunk_size);
 void	radix_sort(t_stack *a, t_stack *b);
 #endif

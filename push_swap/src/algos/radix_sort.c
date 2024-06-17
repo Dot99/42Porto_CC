@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:59:23 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/03 12:16:55 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/17 08:44:07 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,32 +21,35 @@ static int	*sort_arr(t_stack *stack)
 	i = 0;
 	while (i < stack->stack_size)
 	{
-		sorted_arr[i] = (stack->storage)[i];
-		i++;
+		sorted_arr[i] = stack->storage[i];
+		i += 1;
 	}
-	counting_sort(sorted_arr, stack->stack_size);
+	insertion_sort(sorted_arr, stack->stack_size);
 	return (sorted_arr);
 }
 
 static void	index(t_stack *stack, int *sorted_arr)
 {
 	int	i;
-	int	*index_map;
+	int	*temp;
+	int	j;
 
-	index_map = malloc((max(stack) + 1) * sizeof(int));
 	i = -1;
-	while (++i <= max(stack))
-		index_map[i] = 0;
-	i = 0;
-	while (i < stack->stack_size)
+	temp = malloc(stack->stack_size * sizeof(int));
+	while (++i < stack->stack_size)
 	{
-		index_map[sorted_arr[i] - min(stack)] = i + 1;
-		i++;
+		j = -1;
+		while (++j < stack->stack_size)
+		{
+			if (sorted_arr[i] == stack->storage[j])
+				temp[j] = i;
+		}
 	}
 	i = -1;
 	while (++i < stack->stack_size)
-		stack->storage[i] = index_map[stack->storage[i] - min(stack)];
-	free(index_map);
+		stack->storage[i] = temp[i];
+	free(temp);
+	free(sorted_arr);
 }
 
 void	radix_sort(t_stack *a, t_stack *b)
