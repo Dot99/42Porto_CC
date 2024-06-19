@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 13:37:27 by dot               #+#    #+#             */
-/*   Updated: 2024/06/06 09:32:30 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/19 11:41:49 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,16 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 //---------------------------------GNL---------------------//
+
+char	*ft_strndup(char *s, int len);
+char	*free_data(char *stash, char *buffer);
+char	*read_from_file(int fd, char *stash);
+char	*leftovers(char *stash);
 char	*get_next_line(int fd);
+
 int		ft_strclen(char *str, char c);
+char	*gnl_ft_strchr(char *str, char c);
+char	*gnl_ft_strjoin(char *s1, char *s2);
 
 //-----------------------------FT PRINTF-------------------//
 

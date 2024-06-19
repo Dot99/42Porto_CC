@@ -6,11 +6,11 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:23:10 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/06 09:33:04 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/18 16:52:05 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 static int	ft_check(const char *str, int i, va_list ap)
 {

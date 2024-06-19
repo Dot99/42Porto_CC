@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_gnl.c                                           :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 09:01:44 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/06 09:05:19 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/04/24 08:59:37 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/06/19 10:50:25 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 char	*free_data(char *stash, char *buffer)
 {
@@ -29,13 +29,13 @@ char	*read_from_file(int fd, char *stash)
 	if (!buffer)
 		return (NULL);
 	*buffer = 0;
-	while (read_size != 0 && !ft_strchr(buffer, '\n'))
+	while (read_size != 0 && !gnl_ft_strchr(buffer, '\n'))
 	{
 		read_size = read(fd, buffer, BUFFER_SIZE);
 		if (read_size < 0)
 			return (free_data(stash, buffer));
 		buffer[read_size] = '\0';
-		stash = ft_strjoin(stash, buffer);
+		stash = gnl_ft_strjoin(stash, buffer);
 	}
 	if (read_size == -1 || *stash == '\0')
 		return (free_data(stash, buffer));
@@ -75,3 +75,18 @@ char	*get_next_line(int fd)
 		free(stash[fd]);
 	return (new_line);
 }
+// int main()
+// {
+// 	int fd = open("test.txt", O_RDONLY);
+// 	int fd1 = open("test1.txt", O_RDONLY);
+// 	int fd2 = open("test2.txt", O_RDONLY);
+// 	int i = 0;
+// 	while(i < 2)
+// 	{
+// 		printf("%s", get_next_line(fd));
+// 		printf("%s", get_next_line(fd1));
+// 		printf("%s", get_next_line(fd2));
+// 		i++;
+// 	}
+// 	return(0);
+// }

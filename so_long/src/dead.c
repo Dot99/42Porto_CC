@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:48:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/07 11:22:00 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:52:27 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	dead(int num)
 {
 	ft_printf("Error\n");
 	if (num == 1)
-		ft_printf("%s\n", ARG_ERROR);
+		ft_printf("%s\n", MAP_ERROR);
 	else if (num == 2)
 		ft_printf("%s\n", MAP_ERROR_EX);
 	else if (num == 3)
@@ -25,5 +25,65 @@ void	dead(int num)
 		ft_printf("%s\n", WRONG_SIZE_MAP);
 	else if (num == 5)
 		ft_printf("%s\n", WRONG_MAP_FORMAT);
+	else if (num == 6)
+		ft_printf("%s\n", WRONG_MALLOC);
+	else if (num == 7)
+		ft_printf("%s\n", WRONG_NUM);
+	else if (num == 8)
+		ft_printf("%s\n", MLX_ERROR);
 	exit(EXIT_SUCCESS);
+}
+
+void	free_array(char **map, int lines)
+{
+	int	i;
+
+	i = -1;
+	if (!map[0])
+	{
+		free(map);
+		return ;
+	}
+	while (++i < lines)
+		free (map[i]);
+	free(map);
+}
+
+void	free_map(char **map, t_game *game)
+{
+	int	i;
+
+	i = -1;
+	if (!map[0])
+	{
+		free (game->map);
+		return ;
+	}
+	while (++i < game->width)
+		free(game->map[i]);
+	free(game->map);
+}
+
+void	free_all(t_game *game)
+{
+	if (!game)
+		return ;
+	if (game->map)
+		free_map(game->map, game);
+	if (game->img.mlx_img)
+		mlx_destroy_image(game->mlx_ptr, game->img.mlx_img);
+	if (game->win_ptr)
+		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+	if (game->mlx_ptr)
+	{
+		mlx_destroy_display(game->mlx_ptr);
+		free(game->mlx_ptr);
+	}
+	free(game);
+}
+
+int	ft_exit(t_game *game)
+{
+	free_all(game);
+	exit (0);
 }

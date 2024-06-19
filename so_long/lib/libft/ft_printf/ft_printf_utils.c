@@ -6,11 +6,11 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 08:44:35 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/06 09:32:58 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/18 16:52:00 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	ft_putstr(char *str)
 {

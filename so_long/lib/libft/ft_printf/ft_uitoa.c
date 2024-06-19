@@ -6,11 +6,11 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:31:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/06 09:33:16 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/18 16:52:16 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 unsigned int	ft_usize(unsigned int nbr)
 {

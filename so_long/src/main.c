@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:30:39 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/11 08:51:49 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/19 15:27:54 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,20 @@
 
 int	main(int argc, char **argv)
 {
-	t_maps *map;
+	int		fd;
+	t_game *game;
 
-	if (argc != 2)
+	if (argc == 2)
 	{
-		return (dead(1), EXIT_SUCCESS);
+		check_extension(argv[1]);
+		game = init();
+		fd = open(argv[1], O_RDONLY);
+		if(fd < 0)
+			dead(1);
+		read_map(argv[1], game);
+		map_validation(game);
+		render(game);
+		exit(EXIT_SUCCESS);
 	}
-	init(argv[1]);
-	checker(argv[1], map);
-	//TODO: Parse Map
-	//TODO: Main function
+	return(0);
 }

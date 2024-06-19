@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclen.c                                       :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 09:00:51 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/06 09:01:03 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/06/06 10:40:27 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/06/19 08:52:36 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-int	ft_strclen(char *str, char c)
+/// @brief Checks extension of file
+/// @param file Name of file
+void	check_extension(char *file)
 {
-	int	i;
-
-	i = 0;
-	if (!str)
-		return (0);
-	while ((str[i] && str[i] != c))
-		i++;
-	return (i);
+	if (ft_strncmp(file + ft_strlen(file) - 4, ".ber", 4) != 0)
+		dead(2);
 }
