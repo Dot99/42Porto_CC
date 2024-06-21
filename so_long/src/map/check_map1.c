@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:54:25 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/19 13:15:56 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/21 15:21:21 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	count_map_assets(t_game *game)
 	{
 		x = -1;
 		while (++x < game->width)
-		{	
+		{
 			if (game->map[y][x] == 'P')
 				player++;
 			else if (game->map[y][x] == 'E')
@@ -37,6 +37,8 @@ void	count_map_assets(t_game *game)
 		dead(7);
 }
 
+/// @brief Checks the content of the map
+/// @param game Struct of the game
 void	check_map_content(t_game *game)
 {
 	int	y;
@@ -64,6 +66,8 @@ void	check_map_content(t_game *game)
 	}
 }
 
+/// @brief Checks the map size
+/// @param game Struct of the game
 void	check_map_size(t_game *game)
 {
 	int	y;
@@ -76,10 +80,12 @@ void	check_map_size(t_game *game)
 			dead(4);
 		if ((ft_n_strclen(game->map[y]) != game->width)
 			&& (game->map[y] != NULL))
-				dead(5);
+			dead(5);
 	}
 }
 
+/// @brief Checks the borders of the game
+/// @param game Struct of the game
 void	check_borders(t_game *game)
 {
 	t_point	coords;
@@ -87,9 +93,6 @@ void	check_borders(t_game *game)
 	coords.y = -1;
 	while (++coords.y < game->height)
 	{
-		//ft_printf("%i\n", coords.y);
-		// ft_printf("%c\n", game->map[coords.y][0]);
-		// ft_printf("%s\n", "----");
 		if (coords.y == 0 || coords.y == game->height - 1)
 		{
 			coords.x = -1;

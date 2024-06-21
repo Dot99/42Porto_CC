@@ -6,15 +6,18 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:39:16 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/19 14:47:48 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/21 15:15:58 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
+/// @brief Initializes the contents of the struct
+/// @param game Struct of the game
 void	init_game(t_game *game)
 {
 	game->map = NULL;
+	game->width = 0;
+	game->height = 0;
 	game->player.x = 0;
 	game->player.y = 0;
 	game->exit.x = 0;
@@ -29,6 +32,8 @@ void	init_game(t_game *game)
 	game->tile.y = 0;
 }
 
+/// @brief Initializes the content of the struct which MLX needs
+/// @param game 
 void	init_img(t_game *game)
 {
 	game->mlx_ptr = mlx_init();

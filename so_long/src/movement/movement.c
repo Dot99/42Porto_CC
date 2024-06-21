@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:33:48 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/18 15:37:34 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/21 15:10:46 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void	check_win(t_game *game)
 		ft_exit(game);
 	}
 }
-
+/// @brief Movement up
+/// @param game Struct of the game
 void	move_up(t_game *game)
 {
 	int	n_pos;
@@ -57,7 +58,8 @@ void	move_up(t_game *game)
 	game->player.y = n_pos;
 	check_win(game);
 }
-
+/// @brief Movement down
+/// @param game Struct of the game
 void	move_down(t_game *game)
 {
 	int	n_pos;
@@ -83,7 +85,8 @@ void	move_down(t_game *game)
 	game->player.y = n_pos;
 	check_win(game);
 }
-
+/// @brief Movement left
+/// @param game Struct of the game
 void	move_left(t_game *game)
 {
 	int	n_pos;
@@ -106,7 +109,8 @@ void	move_left(t_game *game)
 	game->player.x = n_pos;
 	check_win(game);
 }
-
+/// @brief Movement right
+/// @param game Struct of the game
 void	move_right(t_game *game)
 {
 	int	n_pos;

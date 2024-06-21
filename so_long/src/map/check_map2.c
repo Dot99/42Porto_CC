@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 16:10:24 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/19 13:16:35 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/21 15:22:55 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	flood_fill(char **map, t_game *game, int x, int y)
 	flood_fill(map, game, x, y - 1);
 }
 
+/// @brief Checks if there is a valid path in the map
+/// @param game 
 void	check_valid_path(t_game *game)
 {
 	char	**map;
@@ -63,6 +65,8 @@ void	check_valid_path(t_game *game)
 	free_array(map, game->width);
 }
 
+/// @brief Checks if the contents of the map are the one's requested
+/// @param game Struct of the game
 void	check_map_assets(t_game *game)
 {
 	t_point	coords;
@@ -80,11 +84,13 @@ void	check_map_assets(t_game *game)
 				&& game->map[coords.y][coords.x] != 'C'
 				&& game->map[coords.y][coords.x] != '\n'
 				&& game->map[coords.y][coords.x] != '\r')
-			dead(7);
+				dead(7);
 		}
 	}
 }
 
+/// @brief Checks if there is not any collectibles
+/// @param game Struct of the game
 void	check_collectibles(t_game *game)
 {
 	if (game->collectibles <= 0)

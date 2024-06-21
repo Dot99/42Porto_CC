@@ -6,12 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:48:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/19 14:52:27 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/21 15:15:46 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+/// @brief Function to show errors and exit
+/// @param num Num of the error
 void	dead(int num)
 {
 	ft_printf("Error\n");
@@ -34,6 +36,9 @@ void	dead(int num)
 	exit(EXIT_SUCCESS);
 }
 
+/// @brief Frees the map 
+/// @param map The map matrix
+/// @param lines The lines of the matrix
 void	free_array(char **map, int lines)
 {
 	int	i;
@@ -82,6 +87,8 @@ void	free_all(t_game *game)
 	free(game);
 }
 
+/// @brief Function to exit the game cleanly
+/// @param game  
 int	ft_exit(t_game *game)
 {
 	free_all(game);

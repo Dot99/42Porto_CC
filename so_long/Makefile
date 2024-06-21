@@ -6,7 +6,7 @@
 #    By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/06 08:48:03 by gude-jes          #+#    #+#              #
-#    Updated: 2024/06/19 15:04:00 by gude-jes         ###   ########.fr        #
+#    Updated: 2024/06/21 15:01:51 by gude-jes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 #==============================================================================#
 
 CC 			= cc
-CFLAGS 		= -Wall -Wextra -Werror
+CFLAGS 		= -Wall -Wextra -Werror -g
 MLXFLAGS 	= -L ./lib/minilibx-linux -lm -lmlx -Ilmlx -lXext -lX11
 NAME		= so_long
 NAME_BONUS	= so_long_bonus
@@ -78,7 +78,7 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	@$(RM) $(LIBFT) $(NAME)
+	@$(RM) $(LIBFT) $(NAME) $(OBJ_DIR)
 
 re: fclean all
 

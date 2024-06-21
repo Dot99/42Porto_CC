@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:34:18 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/19 15:32:44 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/21 15:00:30 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,19 @@
 //------------------STRUCTS----------------------//
 
 /// @brief Struct for coordinates of the map
+/// @param x X coord
+/// @param y Y coord
 typedef struct s_coord
 {
 	int x;
 	int y;
 }				t_point;
 
-/// @brief Struct for image
+/// @brief Struct for image/Necessary for MLX
+/// @param mlx_img MLX Image
+/// @param bpp Bytes per Pixel
+/// @param line_len Necessary for MLX
+/// @param endian Necessary for MLX
 typedef struct s_img
 {
 	void	*mlx_img;
@@ -53,6 +59,19 @@ typedef struct s_img
 /// @brief Base struct for the game
 /// @param map Matrix of coords
 /// @param player Coords of player
+/// @param width X value of the map
+/// @param height Y value of the map
+/// @param collectibles Collectibles on the map
+/// @param gathered Util for flood_fill
+/// @param collected Collectibles colleted on the map
+/// @param moves Num of moves
+/// @param coords t_point coords
+/// @param player t_point coords of player
+/// @param exit t_point coords of exit
+/// @param tile t_point coords of tiles
+/// @param mlx_ptr MLX Pointer
+/// @param win_ptr Window Pointer
+/// @param img img info
 typedef struct s_game
 {
 	char 	**map;
@@ -109,11 +128,11 @@ void	render_tiles(t_game *game, int x, int y);
 
 //---------MOVEMENT---------//
 
+int		handle_keypress(int keysym, t_game *game);
 void	move_up(t_game *game);
 void	move_down(t_game *game);
 void	move_left(t_game *game);
 void	move_right(t_game *game);
-int		handle_keypress(int keysym, t_game *game);
 void	validate_move_up(t_game *game);
 void	validate_move_down(t_game *game);
 void	validate_move_left(t_game *game);
