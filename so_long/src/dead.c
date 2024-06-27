@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:48:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/21 15:15:46 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/27 08:59:34 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 /// @param num Num of the error
 void	dead(int num)
 {
+
 	ft_printf("Error\n");
 	if (num == 1)
 		ft_printf("%s\n", MAP_ERROR);
@@ -64,7 +65,7 @@ void	free_map(char **map, t_game *game)
 		free (game->map);
 		return ;
 	}
-	while (++i < game->width)
+	while (++i < game->height)
 		free(game->map[i]);
 	free(game->map);
 }
@@ -92,5 +93,5 @@ void	free_all(t_game *game)
 int	ft_exit(t_game *game)
 {
 	free_all(game);
-	exit (0);
+	exit (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 08:59:37 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/19 10:50:25 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:21:17 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ char	*leftovers(char *stash)
 {
 	char	*leftover;
 
-	leftover = ft_strndup(stash + ft_strclen(stash, '\n')
-			+ 1, ft_strclen(stash, '\0') - ft_strclen(stash, '\n'));
+	leftover = ft_strndup(stash + ft_strclen(stash, '\n') + 1,
+			ft_strclen(stash, '\0') - ft_strclen(stash, '\n'));
 	free (stash);
 	if (!leftover)
 		return (NULL);
@@ -67,7 +67,7 @@ char	*get_next_line(int fd)
 	stash[fd] = read_from_file(fd, stash[fd]);
 	if (!stash[fd])
 		return (NULL);
-	new_line = ft_strndup(stash[fd], ft_strclen(stash[fd], '\n') + 1);
+	new_line = ft_strndup(stash[fd], ft_strclen(stash[fd], '\n'));
 	if (!new_line)
 		return (NULL);
 	stash[fd] = leftovers(stash[fd]);

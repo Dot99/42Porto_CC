@@ -6,7 +6,7 @@
 #    By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/06 08:48:03 by gude-jes          #+#    #+#              #
-#    Updated: 2024/06/21 15:01:51 by gude-jes         ###   ########.fr        #
+#    Updated: 2024/06/26 08:45:04 by gude-jes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ GENERAL		= main init dead
 RENDER		= render_map render_window
 MOVEMENT	= movement movement_utils
 MAP			= check_map1 check_map2 checker map_utils
+
 #==============================================================================#
 #                                    PATHS                                     #
 #==============================================================================#
@@ -84,5 +85,5 @@ re: fclean all
 
 download:
 	@wget https://cdn.intra.42.fr/document/document/21300/minilibx-linux.tgz
-	@tar -xzf minilibx-linux.tgz -C libs
+	@tar -xzf minilibx-linux.tgz -C lib
 	@rm minilibx-linux.tgz

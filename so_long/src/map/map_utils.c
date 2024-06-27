@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:42:02 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/21 15:31:05 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:24:12 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,13 @@ int	count_lines(char *fileName)
 void	fill_map(int fd, t_game *game)
 {
 	int	i;
+	char *temp;
 
 	i = -1;
 	while (++i < game->height)
 		game->map[i] = get_next_line(fd);
+	temp = get_next_line(fd);
+	free(temp);
 	game->map[i] = NULL;
 }
 

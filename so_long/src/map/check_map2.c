@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 16:10:24 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/21 15:22:55 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:18:21 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ void	check_valid_path(t_game *game)
 			if (map[game->coords.y][game->coords.x] == 'C'
 				|| map[game->coords.y][game->coords.x] == 'E')
 			{
-				free_array(map, game->height);
+				free_array(map, game->width);
 				dead(3);
 			}
 		}
 	}
-	free_array(map, game->width);
+	free_array(map, game->height);
 }
 
 /// @brief Checks if the contents of the map are the one's requested
