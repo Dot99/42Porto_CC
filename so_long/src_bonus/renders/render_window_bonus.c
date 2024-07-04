@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_window.c                                    :+:      :+:    :+:   */
+/*   render_window_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 08:59:10 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 10:49:23 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 10:43:04 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 /// @brief Renders the game
 /// @param game Struct of the game
 void	render_window(t_game *game)
@@ -18,7 +18,7 @@ void	render_window(t_game *game)
 	if (game->mlx_ptr == NULL)
 		dead(8);
 	game->win_ptr = mlx_new_window(game->mlx_ptr, (game->width * SIZE),
-			(game->height * SIZE), "so_long");
+			((game->height + 1) * SIZE), "so_long");
 	if (game->win_ptr == NULL)
 		dead(8);
 	game->img.mlx_img = mlx_new_image(game->mlx_ptr, game->width * SIZE,
@@ -38,5 +38,6 @@ void	render(t_game *game)
 	mlx_hook(game->win_ptr, KeyPress, KeyPressMask, &handle_keypress, game);
 	mlx_hook(game->win_ptr, DestroyNotify, StructureNotifyMask, &ft_exit,
 		game);
+	mlx_loop_hook(game->mlx_ptr, render_anim, game);
 	mlx_loop(game->mlx_ptr);
 }

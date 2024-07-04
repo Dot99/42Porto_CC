@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dead.c                                             :+:      :+:    :+:   */
+/*   dead_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:48:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 12:24:18 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/03 12:41:23 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 /// @brief Function to show errors and exit
 /// @param num Num of the error
@@ -50,7 +50,7 @@ void	free_array(char **map, int lines)
 		return ;
 	}
 	while (++i < lines)
-		free(map[i]);
+		free (map[i]);
 	free(map);
 }
 

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:34:18 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 11:23:16 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 11:24:01 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 ///@brief Libraries
 # include "../lib/libft/libft.h"
@@ -88,6 +88,11 @@ typedef struct s_game
 	void	*mlx_ptr;
 	void	*win_ptr;
 	t_img	img;
+	int		lightsaber;
+	int		enemies;
+	int		spawn;
+	int		health;
+	int		movement;
 }				t_game;
 
 //-------------------FUNCTIONS-----------------//
@@ -125,6 +130,7 @@ void	put_tile(t_game *game, char *tile, int x, int y);
 void	render_corners(t_game *game, int x, int y);
 void	render_borders(t_game *game, int x, int y);
 void	render_tiles(t_game *game, int x, int y);
+void	render_moves(t_game *game);
 
 //---------MOVEMENT---------//
 
@@ -137,5 +143,26 @@ void	validate_move_up(t_game *game);
 void	validate_move_down(t_game *game);
 void	validate_move_left(t_game *game);
 void	validate_move_right(t_game *game);
+
+//---------ATTACK---------//
+
+void	attack(int keysym, t_game *game);
+void	lightsaber(t_game *game);
+int		check_attack(t_game *game, int n);
+
+//---------ENEMY---------//
+
+void	check_lose(t_game *game, int n);
+int		render_anim(t_game *game);
+int		check_enemy(t_game *game, int n);
+void	lose(t_game *game);
+
+//---------BOSS---------//
+
+void	put_health(t_game *game, int health);
+void	check_boss_start(t_game *game);
+void	boss_damage(t_game *game, int n);
+int		check_boss(t_game *game, int n);
+void	boss_anim(t_game *game, int n);
 
 #endif

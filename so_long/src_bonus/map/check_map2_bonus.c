@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map2.c                                       :+:      :+:    :+:   */
+/*   check_map2_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 16:10:24 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 12:38:20 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/01 16:23:42 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	flood_fill(char **map, t_game *game, int x, int y)
 {
@@ -18,7 +18,7 @@ void	flood_fill(char **map, t_game *game, int x, int y)
 		return ;
 	if (map[y][x] == 'F' || map[y][x] == '1')
 		return ;
-	if (map[y][x] == 'C')
+	if (map[y][x] == 'C' || map[y][x] == 'L')
 	{
 		map[y][x] = 'F';
 		game->gathered++;
@@ -42,7 +42,7 @@ void	check_valid_path(t_game *game)
 {
 	char	**map;
 
-	map = malloc(sizeof(char *) * game->height);
+	map = malloc(sizeof(char *) * game->width);
 	if (!map)
 		dead(6);
 	while (++game->coords.y < game->height)
@@ -55,9 +55,10 @@ void	check_valid_path(t_game *game)
 		while (++game->coords.x < game->width)
 		{
 			if (map[game->coords.y][game->coords.x] == 'C'
+				|| map[game->coords.y][game->coords.x] == 'E'
 				|| map[game->coords.y][game->coords.x] == 'E')
 			{
-				free_array(map, game->height);
+				free_array(map, game->width);
 				dead(3);
 			}
 		}
@@ -82,6 +83,8 @@ void	check_map_assets(t_game *game)
 				&& game->map[coords.y][coords.x] != 'P'
 				&& game->map[coords.y][coords.x] != 'E'
 				&& game->map[coords.y][coords.x] != 'C'
+				&& game->map[coords.y][coords.x] != 'L'
+				&& game->map[coords.y][coords.x] != 'X'
 				&& game->map[coords.y][coords.x] != '\n'
 				&& game->map[coords.y][coords.x] != '\r')
 				dead(7);

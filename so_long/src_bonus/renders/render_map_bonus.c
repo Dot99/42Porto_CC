@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_map.c                                       :+:      :+:    :+:   */
+/*   render_map_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 09:34:38 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 10:50:19 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 10:05:20 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 /// @brief Function to put a image to a tile
 /// @param game Struct of the game
 /// @param tile Coords of the tile
@@ -82,6 +82,10 @@ void	render_tiles(t_game *game, int x, int y)
 		put_tile(game, "./textures/exit.xpm", x * SIZE, y * SIZE);
 	else if (tile == 'C')
 		put_tile(game, "./textures/collectible.xpm", x * SIZE, y * SIZE);
+	else if (tile == 'L')
+		put_tile(game, "./textures/saber.xpm", x * SIZE, y * SIZE);
+	else if (tile == 'X')
+		put_tile(game, "./textures/enemy1.xpm", x * SIZE, y * SIZE);
 }
 
 /// @brief Main function to render the map
@@ -97,6 +101,7 @@ void	render_map(t_game *game)
 			render_corners(game, game->coords.x, game->coords.y);
 			render_borders(game, game->coords.x, game->coords.y);
 			render_tiles(game, game->coords.x, game->coords.y);
+			render_moves(game);
 		}
 	}
 }
