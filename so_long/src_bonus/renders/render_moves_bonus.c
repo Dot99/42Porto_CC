@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 08:48:05 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 11:07:53 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:07:18 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file render_moves_bonus.c
+ * @brief Renders the tile that shows up the movements
+ */
 
 #include "so_long_bonus.h"
 

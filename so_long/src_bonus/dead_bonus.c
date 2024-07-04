@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:48:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/03 12:41:23 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:07:37 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file dead_bonus.c
+ * @brief Frees and exit errors
+ */
 
 #include "so_long_bonus.h"
 

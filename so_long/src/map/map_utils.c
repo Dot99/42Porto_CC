@@ -6,11 +6,17 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:42:02 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 10:49:03 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:55:30 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file map_utils.c
+ * @brief Fill the double array and define height and width
+ */
+
 #include "so_long.h"
+
 /// @brief strclen different from gnl and libft
 /// @param str String to check
 /// @return The size of the string stop characters

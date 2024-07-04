@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:21:24 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 11:04:04 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:13:05 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file attack_checker_bonus.c
+ * @brief  Checks the attack and enemies position
+ */
 
 #include "so_long_bonus.h"
 

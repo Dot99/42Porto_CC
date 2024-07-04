@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:39:16 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/21 15:15:58 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:51:16 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file init.c
+ * @brief Initializes the struct
+ */
 
 #include "so_long.h"
 /// @brief Initializes the contents of the struct

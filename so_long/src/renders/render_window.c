@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 08:59:10 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 10:49:23 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:57:41 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file render_window.c
+ * @brief Main function to render and render of the window
+ */
 
 #include "so_long.h"
 /// @brief Renders the game

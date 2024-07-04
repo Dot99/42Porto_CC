@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:59:11 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 11:05:29 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:14:01 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file boss_bonus.c
+ * @brief Boss related functions
+ */
 
 #include "so_long_bonus.h"
 

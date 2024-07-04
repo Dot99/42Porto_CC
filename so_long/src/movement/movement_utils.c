@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:36:13 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 10:51:58 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:44:50 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file movement_utils.c
+ * @brief Movement Utilities and handle key pressed
+ */
 
 #include "so_long.h"
 /// @brief Handles the key pressed

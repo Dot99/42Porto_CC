@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 10:58:08 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/03 16:55:12 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:10:55 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file attack_bonus.c
+ * @brief Handles the attacks
+ */
 
 #include "so_long_bonus.h"
 

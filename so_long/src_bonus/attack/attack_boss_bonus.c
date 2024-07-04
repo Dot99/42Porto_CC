@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 10:55:57 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 11:08:24 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:12:17 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file attack_boss_bonus.c
+ * @brief Handles boss animation and damage to the player
+ */
 
 #include "so_long_bonus.h"
 

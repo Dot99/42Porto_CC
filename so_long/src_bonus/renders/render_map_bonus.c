@@ -6,11 +6,17 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 09:34:38 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 10:05:20 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:05:46 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file render_map_bonus.c
+ * @brief Renders of the map and function to set images on the tiles
+ */
+
 #include "so_long_bonus.h"
+
 /// @brief Function to put a image to a tile
 /// @param game Struct of the game
 /// @param tile Coords of the tile

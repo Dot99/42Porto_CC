@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:48:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 12:24:18 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:45:28 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file dead.c
+ * @brief Frees and exit errors
+ */
 
 #include "so_long.h"
 

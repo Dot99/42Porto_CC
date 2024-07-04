@@ -6,10 +6,15 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:33:48 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 10:51:29 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:43:46 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file movement.c
+ * @brief Movements and win checker
+ * 
+ */
 #include "so_long.h"
 
 void	check_win(t_game *game)
@@ -47,12 +52,10 @@ void	move_up(t_game *game)
 		game->player.x * SIZE, n_pos * SIZE + ((SIZE / 3) * 2));
 	put_tile(game, "./textures/floor.xpm", game->player.x * SIZE, p_pos
 		* SIZE);
-	usleep(50000);
 	put_tile(game, "./textures/player.xpm", game->player.x * SIZE, n_pos * SIZE
 		+ ((SIZE / 3)));
 	put_tile(game, "./textures/floor.xpm", game->player.x * SIZE, p_pos
 		* SIZE);
-	usleep(50000);
 	put_tile(game, "./textures/player.xpm",
 		game->player.x * SIZE, n_pos * SIZE);
 	put_tile(game, "./textures/floor.xpm", game->player.x * SIZE, p_pos
@@ -76,12 +79,10 @@ void	move_down(t_game *game)
 		game->player.x * SIZE, n_pos * SIZE - ((SIZE / 3) * 2));
 	put_tile(game, "./textures/floor.xpm", game->player.x * SIZE, p_pos
 		* SIZE);
-	usleep(50000);
 	put_tile(game, "./textures/player.xpm", game->player.x * SIZE, n_pos * SIZE
 		- ((SIZE / 3)));
 	put_tile(game, "./textures/floor.xpm", game->player.x * SIZE, p_pos
 		* SIZE);
-	usleep(50000);
 	put_tile(game, "./textures/player.xpm",
 		game->player.x * SIZE, n_pos * SIZE);
 	put_tile(game, "./textures/floor.xpm", game->player.x * SIZE, p_pos
@@ -104,11 +105,9 @@ void	move_left(t_game *game)
 	put_tile(game, "./textures/player.xpm", n_pos * SIZE + ((SIZE / 3) * 2),
 		game->player.y * SIZE);
 	put_tile(game, "./textures/floor.xpm", p_pos * SIZE, game->player.y * SIZE);
-	usleep(50000);
 	put_tile(game, "./textures/player.xpm", n_pos * SIZE + ((SIZE / 3)),
 		game->player.y * SIZE);
 	put_tile(game, "./textures/floor.xpm", p_pos * SIZE, game->player.y * SIZE);
-	usleep(50000);
 	put_tile(game, "./textures/player.xpm",
 		n_pos * SIZE, game->player.y * SIZE);
 	put_tile(game, "./textures/floor.xpm", p_pos * SIZE, game->player.y * SIZE);
@@ -130,11 +129,9 @@ void	move_right(t_game *game)
 	put_tile(game, "./textures/player.xpm", n_pos * SIZE - ((SIZE / 3) * 2),
 		game->player.y * SIZE);
 	put_tile(game, "./textures/floor.xpm", p_pos * SIZE, game->player.y * SIZE);
-	usleep(50000);
 	put_tile(game, "./textures/player.xpm", n_pos * SIZE - ((SIZE / 3)),
 		game->player.y * SIZE);
 	put_tile(game, "./textures/floor.xpm", p_pos * SIZE, game->player.y * SIZE);
-	usleep(50000);
 	put_tile(game, "./textures/player.xpm",
 		n_pos * SIZE, game->player.y * SIZE);
 	put_tile(game, "./textures/floor.xpm", p_pos * SIZE, game->player.y * SIZE);

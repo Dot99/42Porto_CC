@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 11:41:12 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 11:01:33 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:13:37 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file lightsaber_bonus.c
+ * @brief Weapon check
+ */
 
 #include "so_long_bonus.h"
 

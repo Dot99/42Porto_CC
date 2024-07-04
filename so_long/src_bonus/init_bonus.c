@@ -6,11 +6,17 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:39:16 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/03 11:16:29 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:07:52 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file init_bonus.c
+ * @brief Initializes the struct
+ */
+
 #include "so_long_bonus.h"
+
 /// @brief Initializes the contents of the struct
 /// @param game Struct of the game
 void	init_game(t_game *game)

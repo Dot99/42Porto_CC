@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 16:01:35 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 11:08:52 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:15:08 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file enemy_bonus.c
+ * @brief Renders enemies anim and lose checks
+ */
 
 #include "so_long_bonus.h"
 

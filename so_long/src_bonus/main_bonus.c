@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:30:39 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 10:05:15 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:10:15 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file main_bonus.c
+ * @brief Main of the program
+ */
 
 #include "so_long_bonus.h"
 

@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:54:25 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/01 17:20:22 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:59:02 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file check_map1_bonus.c
+ * @brief Verifications of the map 1 + new characters
+ */
 
 #include "so_long_bonus.h"
 

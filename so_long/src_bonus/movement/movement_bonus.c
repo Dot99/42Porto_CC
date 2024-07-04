@@ -6,9 +6,15 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:33:48 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 09:56:41 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:00:48 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file movement_bonus.c
+ * @brief Movements and win checker + movement animations
+ * 
+ */
 
 #include "so_long_bonus.h"
 

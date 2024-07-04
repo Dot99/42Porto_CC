@@ -6,9 +6,14 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 09:29:29 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 11:06:01 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:14:43 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file boss_health_bonus.c
+ * @brief  Handles boss health
+ */
 
 #include "so_long_bonus.h"
 
