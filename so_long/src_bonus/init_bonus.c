@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:39:16 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 17:07:52 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/08 11:56:57 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	init_game(t_game *game)
 	game->enemies = 0;
 	game->spawn = 0;
 	game->health = 3;
+	game->movement = 0;
 }
 
 /// @brief Initializes the content of the struct which MLX needs
@@ -66,7 +67,7 @@ t_game	*init(void)
 
 	game = malloc((1) * sizeof(t_game));
 	if (!game)
-		dead(6);
+		dead(6, game);
 	init_game(game);
 	init_img(game);
 	return (game);

@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:48:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 16:45:28 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/08 12:02:46 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 /// @brief Function to show errors and exit
 /// @param num Num of the error
-void	dead(int num)
+void	dead(int num, t_game *game)
 {
 	ft_printf("Error\n");
 	if (num == 1)
@@ -38,6 +38,8 @@ void	dead(int num)
 		ft_printf("%s\n", WRONG_NUM);
 	else if (num == 8)
 		ft_printf("%s\n", MLX_ERROR);
+	if (num != 2 && num != 1)
+		free_all(game);
 	exit(EXIT_SUCCESS);
 }
 

@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:33:48 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 16:43:46 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/08 09:23:11 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	move_up(t_game *game)
 		game->player.x * SIZE, n_pos * SIZE + ((SIZE / 3) * 2));
 	put_tile(game, "./textures/floor.xpm", game->player.x * SIZE, p_pos
 		* SIZE);
+	usleep(5000000);
 	put_tile(game, "./textures/player.xpm", game->player.x * SIZE, n_pos * SIZE
 		+ ((SIZE / 3)));
 	put_tile(game, "./textures/floor.xpm", game->player.x * SIZE, p_pos

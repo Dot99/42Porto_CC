@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:34:18 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 11:23:16 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/08 12:00:58 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,8 @@ typedef struct s_game
 
 //---------GENERAL---------//
 
-void	dead(int num);
+void	dead(int num, t_game *game);
+void	free_all(t_game *game);
 int		ft_exit(t_game *game);
 void	free_array(char **map, int lines);
 int		ft_n_strclen(const char *str);
@@ -102,7 +103,6 @@ int		ft_n_strclen(const char *str);
 //---------MAP STUFF---------//
 
 t_game	*init(void);
-void	check_extension(char *file);
 void	read_map(char *file, t_game *game);
 void	check_extension(char *file);
 void	map_validation(t_game *game);

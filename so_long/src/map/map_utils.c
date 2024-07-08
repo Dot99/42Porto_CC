@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:42:02 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 16:55:30 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/08 12:02:29 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	count_lines(char *fileName)
 	i = 0;
 	fd = open(fileName, O_RDONLY);
 	if (fd < 0)
-		dead(1);
+		dead(1, NULL);
 	tmp = get_next_line(fd);
 	while (tmp != NULL)
 	{
@@ -76,13 +76,13 @@ void	read_map(char *file, t_game *game)
 
 	game->height = count_lines(file);
 	if (game->height <= 0)
-		dead(4);
+		dead(4, game);
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
-		dead(1);
+		dead(1, game);
 	game->map = malloc(sizeof(char *) * (game->height + 1));
 	if (!game->map)
-		dead(6);
+		dead(6, game);
 	fill_map(fd, game);
 	game->width = ft_n_strclen(game->map[0]);
 	close(fd);

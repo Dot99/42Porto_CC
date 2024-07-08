@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:54:25 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 16:54:07 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/08 11:57:05 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	count_map_assets(t_game *game)
 		}
 	}
 	if (player != 1 || exit != 1)
-		dead(7);
+		dead(7, game);
 }
 
 /// @brief Checks the content of the map
@@ -82,10 +82,10 @@ void	check_map_size(t_game *game)
 	{
 		if ((game->height + game->width <= 7) || (game->height < 3
 				|| game->width < 3))
-			dead(4);
+			dead(4, game);
 		if ((ft_n_strclen(game->map[y]) != game->width)
 			&& (game->map[y] != NULL))
-			dead(5);
+			dead(5, game);
 	}
 }
 
@@ -104,12 +104,12 @@ void	check_borders(t_game *game)
 			while (++coords.x < game->width)
 			{
 				if (game->map[coords.y][coords.x] != '1')
-					dead(5);
+					dead(5, game);
 			}
 		}
 		else if (game->map[coords.y][0] != '1'
 			|| game->map[coords.y][game->width - 1] != '1')
-			dead(5);
+			dead(5, game);
 	}
 }
 

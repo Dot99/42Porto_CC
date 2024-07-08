@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:30:39 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 16:51:48 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/08 12:01:10 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 		game = init();
 		fd = open (argv[1], O_RDONLY);
 		if (fd < 0)
-			dead(1);
+			dead(1, game);
 		read_map(argv[1], game);
 		map_validation(game);
 		render(game);

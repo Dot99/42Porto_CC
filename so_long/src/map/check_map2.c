@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 16:10:24 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 16:54:29 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/08 11:57:05 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	check_valid_path(t_game *game)
 
 	map = malloc(sizeof(char *) * game->height);
 	if (!map)
-		dead(6);
+		dead(6, game);
 	while (++game->coords.y < game->height)
 		map[game->coords.y] = ft_strdup(game->map[game->coords.y]);
 	flood_fill(map, game, game->player.x, game->player.y);
@@ -63,7 +63,7 @@ void	check_valid_path(t_game *game)
 				|| map[game->coords.y][game->coords.x] == 'E')
 			{
 				free_array(map, game->height);
-				dead(3);
+				dead(3, game);
 			}
 		}
 	}
@@ -89,7 +89,7 @@ void	check_map_assets(t_game *game)
 				&& game->map[coords.y][coords.x] != 'C'
 				&& game->map[coords.y][coords.x] != '\n'
 				&& game->map[coords.y][coords.x] != '\r')
-				dead(7);
+				dead(7, game);
 		}
 	}
 }
@@ -99,5 +99,5 @@ void	check_map_assets(t_game *game)
 void	check_collectibles(t_game *game)
 {
 	if (game->collectibles <= 0)
-		dead(7);
+		dead(7, game);
 }
