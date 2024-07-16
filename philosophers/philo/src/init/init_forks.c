@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 14:46:19 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/15 15:02:57 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:29:45 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,35 @@
  */
 #include "philo.h"
 
+void	free_forks(pthread_mutex_t *forks, int end)
+{
+	int	i;
+
+	i = 0;
+	while (i <= end)
+	{
+		pthread_mutex_destroy(&forks[i]);
+		i++;
+	}
+	free(forks);
+}
+
 pthread_mutex_t	*init_forks(t_args *args)
 {
 	pthread_mutex_t *forks;
 	int				i;
 
 	i = 0;
-	forks = malloc(args->nbr_of_philo * sizeof(pthread_mutex_t));
+	forks = malloc(args->nbr_philo * sizeof(pthread_mutex_t));
 	if (!forks)
 		dead(forks, args, MLC_ERROR);
-	while (i < args->nbr_of_philo)
+	while (i < args->nbr_philo)
 	{
 		if (pthread_mutex_init(&args->mutex, NULL) != 0)
+		{
+			free_forks(forks, i);
 			dead(forks, args, MTX_ERROR);
+		}
 		i++;
 	}
 	return (forks);

@@ -6,7 +6,7 @@
 #    By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/15 09:43:10 by gude-jes          #+#    #+#              #
-#    Updated: 2024/07/15 14:46:12 by gude-jes         ###   ########.fr        #
+#    Updated: 2024/07/16 15:06:15 by gude-jes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,25 +15,26 @@
 #==============================================================================#
 
 CC 			= cc
-CFLAGS 		= -Wall -Wextra -Werror
+CFLAGS 		= -Wall -Wextra -Werror -g
 NAME		= philo
 
 INC			= -I./includes
 RM			= rm -rf
 
-GENERAL		= main
-UTILS		= valid_args init_args
+GENERAL		= main handler loop start
+UTILS		= valid_args init_args forks dead philo_val
 INIT		= init_forks init_philo
 #==============================================================================#
 #                                    PATHS                                     #
 #==============================================================================#
 
-VPATH 		= src 
-			src/utils
-			src/init
+VPATH 		= src\
+			src/utils\
+			src/init\
 
 SRC			= $(addsuffix .c, $(GENERAL))\
 			$(addsuffix .c, $(UTILS))\
+			$(addsuffix .c, $(INIT))\
 
 OBJ_DIR		= obj
 OBJS		= $(SRC:%.c=$(OBJ_DIR)/%.o)

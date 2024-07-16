@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 10:58:29 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/15 14:56:11 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:29:58 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	free_all(pthread_mutex_t *forks, t_args *args)
 	i = 0;
 	if (forks)
 	{
-		while (i < args->nbr_of_philo)
+		while (i < args->nbr_philo)
 		{
 			pthread_mutex_destroy(&forks[i]);
 			i++;

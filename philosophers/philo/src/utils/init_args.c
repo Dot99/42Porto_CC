@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 10:32:05 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/15 14:56:44 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:42:41 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,14 @@ int ft_atoi(char *str)
  */
 bool	init_args(t_args *args, char **av)
 {
-	args->nbr_of_philo = ft_atoi(av[1]);
+	args->nbr_philo = ft_atoi(av[1]);
 	args->time_to_die = ft_atoi(av[2]);
 	args->time_to_eat = ft_atoi(av[3]);
 	args->time_to_sleep = ft_atoi(av[4]);
-	args->must_eat_times = -1;
+	args->eat_times = -1;
 	if(av[5])
-		args->must_eat_times = ft_atoi(av[5]);
-	if(args->nbr_of_philo == 0 || args->must_eat_times == 0)
+		args->eat_times = ft_atoi(av[5]);
+	if(args->nbr_philo == 0 || args->eat_times == 0)
 	{
 		dead(NULL, args, WRONG_ARG);
 		return(false);

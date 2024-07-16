@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   handler.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/15 10:04:37 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/16 12:58:55 by gude-jes         ###   ########.fr       */
+/*   Created: 2024/07/16 10:29:05 by gude-jes          #+#    #+#             */
+/*   Updated: 2024/07/16 12:06:38 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @file main.c
- * @brief Main of the program
- */
 #include "philo.h"
 
-int	main(int ac, char **av)
+void	handler(t_philo *philo, char *event)
 {
-	t_args			args;
-	t_philo			*philo;
-	pthread_mutex_t	*fork;
-	
-	if (!valid_args(ac, av) || !init_args(&args, av))
-		dead(NULL, NULL, WRONG_ARG);
-	fork = init_forks(&args);
-	philo = init_philos(&args, fork);
-	start(&args, fork, philo);
-	free_all(fork, &args);
-	exit(EXIT_SUCCESS);
+	suseconds_t timestamp;
+
+	pthread_mutex_lock(&philo->args->mutex);
+	if(philo->args->end)
+	{
+		pthread_mutex_unlock(&philo->args->mutex);
+		return ;
+	}
+	timestamp = get_time() - philo->start;
+	printf("%ld %d %s", timestamp, philo->nbr_philo, event);
+	pthread_mutex_unlock(&philo->args->mutex);
 }

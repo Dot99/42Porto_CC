@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:30:39 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 12:06:03 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/16 17:05:09 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ int	main(int argc, char **argv)
 	int		fd;
 	t_game	*game;
 
-	if (!game)
-		game = NULL;
+	game = NULL;
 	if (argc == 2)
 	{
 		check_extension(argv[1]);
