@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 10:23:38 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/15 10:32:42 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/18 12:02:30 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static bool	is_digit(char c)
 
 static bool	is_alldigits(char **av)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	j = 0;

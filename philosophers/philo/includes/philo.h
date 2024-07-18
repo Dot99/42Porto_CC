@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 09:49:22 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/16 15:30:05 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/18 12:31:05 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define MTX_ERROR "Mutex Error"
 # define MLC_ERROR "Malloc Error"
 # define THR_ERROR "Thread error"
+# define THR_JOIN "Thread join error"
 
 /// @brief Philosophers Messages
 # define FORK "has taken the fork\n"
@@ -34,9 +35,13 @@
 # define SLEEP "is sleeping\n"
 # define THINK "is thinking\n"
 # define DEATH "died\n"
+# define DEFORK "has released the fork\n"
+
+# define DEBUG false
 
 /// @brief Arguments Struct
-typedef struct s_args {
+typedef struct s_args
+{
 	int					nbr_philo;
 	int					time_to_die;
 	int					time_to_eat;
@@ -48,7 +53,8 @@ typedef struct s_args {
 }				t_args;
 
 /// @brief Struct of philo
-typedef struct s_philo {
+typedef struct s_philo
+{
 	int					nbr_philo;
 	int					num_eat;
 	suseconds_t			start;
@@ -60,38 +66,42 @@ typedef struct s_philo {
 }			t_philo;
 
 /// @brief Handle args
-bool	valid_args(int ac, char **av);
-bool	init_args(t_args *args, char **av);
+bool			valid_args(int ac, char **av);
+bool			init_args(t_args *args, char **av);
 
-/// @brief Initialization of forks and philo
+/// @brief Initialization of forks
 pthread_mutex_t	*init_forks(t_args *args);
-t_philo	*init_philos(t_args *args, pthread_mutex_t *forks);
+/// @brief Initialization of philosophers 
+t_philo			*init_philos(t_args *args, pthread_mutex_t *forks);
 
 /// @brief Starts the threads
-bool	start(t_args *args, pthread_mutex_t *fork, t_philo *philo);
+bool			start(t_args *args, pthread_mutex_t *fork, t_philo *philo);
 
-/// @brief Handle forks actions
-void	handle_forks(t_philo *philo, bool handle);
+/// @brief Handle the picking by philo of the forks
+void			pick_forks(t_philo *philo);
+/// @brief Handle the laying by philo of the forks
+void			lay_forks(t_philo *philo);
 
 /// @brief Event Handler
-void	handler(t_philo *philo, char *event);
+void			handler(t_philo *philo, char *event);
 
 /// @brief  Checks if the philosopher is dead
-bool	is_philo_dead(t_args *args, t_philo *philo, int *philo_fed);
+bool			is_philo_dead(t_args *args, t_philo *philo, int *philo_fed);
 
 /// @brief Checks if everyone ate 
-void	all_fed(t_args *args);
+void			all_fed(t_args *args);
 
 /// @brief Time
-suseconds_t	get_time(void);
+suseconds_t		get_time(void);
 
 /// @brief "Loop for threads"
-void	*loop(void *_philo);
+void			*loop(void *_philo);
 
 /// @brief Handles errors
-void	dead(pthread_mutex_t *forks, t_args *args, char *error);
+void			dead(pthread_mutex_t *forks, t_args *args, t_philo *philo,
+					char *error);
 
 /// @brief Frees
-void	free_all(pthread_mutex_t *forks, t_args *args);
+void			free_all(pthread_mutex_t *forks, t_args *args, t_philo *philo);
 
 #endif

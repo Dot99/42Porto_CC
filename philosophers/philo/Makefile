@@ -6,7 +6,7 @@
 #    By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/15 09:43:10 by gude-jes          #+#    #+#              #
-#    Updated: 2024/07/16 15:06:15 by gude-jes         ###   ########.fr        #
+#    Updated: 2024/07/18 09:26:51 by gude-jes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ INC			= -I./includes
 RM			= rm -rf
 
 GENERAL		= main handler loop start
-UTILS		= valid_args init_args forks dead philo_val
-INIT		= init_forks init_philo
+UTILS		= valid_args forks dead philo_val
+INIT		= init_forks init_philo init_args
 #==============================================================================#
 #                                    PATHS                                     #
 #==============================================================================#

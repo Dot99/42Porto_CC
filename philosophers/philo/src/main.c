@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 10:04:37 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/16 12:58:55 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/18 11:43:35 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ int	main(int ac, char **av)
 	t_args			args;
 	t_philo			*philo;
 	pthread_mutex_t	*fork;
-	
+
 	if (!valid_args(ac, av) || !init_args(&args, av))
-		dead(NULL, NULL, WRONG_ARG);
+		dead(NULL, NULL, NULL, WRONG_ARG);
 	fork = init_forks(&args);
 	philo = init_philos(&args, fork);
-	start(&args, fork, philo);
-	free_all(fork, &args);
-	exit(EXIT_SUCCESS);
+	if (!start(&args, fork, philo))
+		return (EXIT_FAILURE);
+	free_all(fork, &args, philo);
+	return (EXIT_SUCCESS);
 }
