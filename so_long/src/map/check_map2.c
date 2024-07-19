@@ -6,17 +6,27 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 16:10:24 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 11:57:05 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:32:14 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup mandatory Mandatory
+ * @{
  * @file check_map2.c
  * @brief Verifications of the map 2
  */
 
 #include "so_long.h"
 
+/**
+ * @brief Flood Fill Algorithm
+ * 
+ * @param map Duplicate of original matrix
+ * @param game Struct of the game
+ * @param x X Coord
+ * @param y Y Coord
+ */
 void	flood_fill(char **map, t_game *game, int x, int y)
 {
 	if (x < 0 || y < 0 || x >= game->width || y >= game->height)
@@ -101,3 +111,5 @@ void	check_collectibles(t_game *game)
 	if (game->collectibles <= 0)
 		dead(7, game);
 }
+
+/**@}*/

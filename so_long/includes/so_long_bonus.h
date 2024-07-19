@@ -6,20 +6,25 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:34:18 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 12:01:05 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:41:52 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @defgroup bonus Bonus
+ * Bonus Part
+ * @file so_long_bonus.h
+ * @brief Bonus Program Header
+*/
 
 #ifndef SO_LONG_BONUS_H
 # define SO_LONG_BONUS_H
 
-///@brief Libraries
 # include "../lib/libft/libft.h"
 # include "../lib/minilibx-linux/mlx.h"
 # include <X11/keysym.h>
 # include <X11/X.h>
 
-///@brief  Error Messages
 # define MAP_ERROR "Failed to open map"
 # define MAP_ERROR_EX "Map extension not allowed"
 # define MAP_ERROR_PATH "Map path is wrong"
@@ -29,7 +34,8 @@
 # define WRONG_NUM "Number of player,exit or collectible is wrong"
 # define MLX_ERROR "There has been an error on MLX"
 
-# define SIZE 64
+/// @brief Tile Size
+# define SIZE 64 
 
 //------------------STRUCTS----------------------//
 
@@ -71,7 +77,12 @@ typedef struct s_img
 /// @param tile t_point coords of tiles
 /// @param mlx_ptr MLX Pointer
 /// @param win_ptr Window Pointer
-/// @param img img info
+/// @param img Img Info
+/// @param lightsaber Checker for collectible lightsaber
+/// @param enemies Number of enemies
+/// @param spawn Checker for boss spawn
+/// @param health Checks the boss health
+/// @param movement Number of movements when boss spawns
 typedef struct s_game
 {
 	char	**map;
@@ -166,3 +177,5 @@ int		check_boss(t_game *game, int n);
 void	boss_anim(t_game *game, int n);
 
 #endif
+
+/**@}*/

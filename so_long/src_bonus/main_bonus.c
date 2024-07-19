@@ -6,7 +6,7 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:30:39 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/16 17:05:09 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 09:27:02 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 
 #include "so_long_bonus.h"
 
+/**
+ * @brief Main
+ * 
+ * @param argc Number of arguments 
+ * @param argv Content of arguments
+ */
 int	main(int argc, char **argv)
 {
 	int		fd;

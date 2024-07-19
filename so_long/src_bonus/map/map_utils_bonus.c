@@ -6,11 +6,12 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:42:02 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 12:03:31 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:48:04 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup bonus Bonus
  * @file map_utils_bonus.c
  * @brief Fill the double array and define height and width
  */
@@ -30,6 +31,12 @@ int	ft_n_strclen(const char *str)
 	return (i);
 }
 
+/**
+ * @brief Count the number of lines in the file
+ * 
+ * @param fileName Name of the file
+ * @return int Number of lines
+ */
 int	count_lines(char *fileName)
 {
 	int		i;
@@ -87,3 +94,5 @@ void	read_map(char *file, t_game *game)
 	game->width = ft_n_strclen(game->map[0]);
 	close(fd);
 }
+
+/**@}*/

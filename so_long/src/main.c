@@ -6,17 +6,24 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:30:39 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 12:01:10 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:39:25 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup mandatory Mandatory
  * @file main.c
  * @brief Main of the program
  */
 
 #include "so_long.h"
 
+/**
+ * @brief Main
+ * 
+ * @param argc Number of arguments 
+ * @param argv Content of arguments
+ */
 int	main(int argc, char **argv)
 {
 	int		fd;
@@ -36,3 +43,5 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+
+/**@}*/

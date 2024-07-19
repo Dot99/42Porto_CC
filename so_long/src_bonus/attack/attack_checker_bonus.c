@@ -6,11 +6,12 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:21:24 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 17:13:05 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:43:28 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup bonus Bonus
  * @file attack_checker_bonus.c
  * @brief  Checks the attack and enemies position
  */
@@ -74,3 +75,5 @@ int	check_enemy(t_game *game, int n)
 	}
 	return (0);
 }
+
+/**@}*/

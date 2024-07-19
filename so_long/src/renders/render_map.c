@@ -6,11 +6,12 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 09:34:38 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 16:57:07 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:38:08 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup mandatory Mandatory
  * @file render_map.c
  * @brief Renders of the map and function to set images on the tiles
  */
@@ -106,3 +107,5 @@ void	render_map(t_game *game)
 		}
 	}
 }
+
+/**@}*/

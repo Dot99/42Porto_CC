@@ -6,17 +6,22 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:54:25 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 11:57:05 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:45:05 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup bonus Bonus
  * @file check_map1_bonus.c
  * @brief Verifications of the map 1 + new characters
  */
 
 #include "so_long_bonus.h"
 
+/**
+ * @brief Counts if the map has the necessary things to work
+ * @param game Struct of the game
+ */
 void	count_map_assets(t_game *game)
 {
 	int	x;
@@ -127,3 +132,5 @@ void	map_validation(t_game *game)
 	check_valid_path(game);
 	check_collectibles(game);
 }
+
+/**@}*/

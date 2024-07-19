@@ -6,11 +6,12 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 16:01:35 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 17:15:08 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:44:19 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup bonus Bonus
  * @file enemy_bonus.c
  * @brief Renders enemies anim and lose checks
  */
@@ -57,6 +58,9 @@ void	lose(t_game *game)
 	ft_exit(game);
 }
 
+/// @brief Checks if the player collided with enemies based on the direction 
+/// @param game Struct of the game
+/// @param n Direction (Left and Down)
 void	check_lose2(t_game *game, int n)
 {
 	if (n == 4)
@@ -75,9 +79,9 @@ void	check_lose2(t_game *game, int n)
 	}
 }
 
-/// @brief Checks if the player collided with enemies based on the direction
+/// @brief Checks if the player collided with enemies based on the direction 
 /// @param game Struct of the game
-/// @param n Direction
+/// @param n Direction (Right and UP)
 void	check_lose(t_game *game, int n)
 {
 	if (n == 1)
@@ -97,3 +101,4 @@ void	check_lose(t_game *game, int n)
 	if (n > 2)
 		check_lose2(game, n);
 }
+/**@}*/

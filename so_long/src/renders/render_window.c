@@ -6,13 +6,16 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 08:59:10 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 11:57:12 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:38:30 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup mandatory Mandatory
  * @file render_window.c
- * @brief Main function to render and render of the window
+ * @brief Render Functions
+ * @details Render the window of the game and render the image. 
+ * Also handles the hooks necessary for mlx
  */
 
 #include "so_long.h"
@@ -45,3 +48,5 @@ void	render(t_game *game)
 		game);
 	mlx_loop(game->mlx_ptr);
 }
+
+/**@}*/

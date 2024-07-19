@@ -6,11 +6,12 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:39:16 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 11:56:57 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:39:03 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup mandatory Mandatory
  * @file init.c
  * @brief Initializes the struct
  */
@@ -38,7 +39,7 @@ void	init_game(t_game *game)
 }
 
 /// @brief Initializes the content of the struct which MLX needs
-/// @param game 
+/// @param game Struct of the game
 void	init_img(t_game *game)
 {
 	game->mlx_ptr = mlx_init();
@@ -52,8 +53,7 @@ void	init_img(t_game *game)
 	game->tile.x = SIZE;
 }
 
-/// @brief Start the game
-/// @param  void
+/// @brief initializes the game
 /// @return Game Struct
 t_game	*init(void)
 {
@@ -66,3 +66,5 @@ t_game	*init(void)
 	init_img(game);
 	return (game);
 }
+
+/**@}*/

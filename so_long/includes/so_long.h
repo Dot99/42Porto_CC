@@ -6,20 +6,27 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:34:18 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 12:00:58 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:40:53 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @defgroup mandatory Mandatory
+ * Mandatory part
+ * @{
+ * 
+ * @file so_long.h
+ * @brief Program Header
+*/
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-///@brief Libraries
 # include "../lib/libft/libft.h"
 # include "../lib/minilibx-linux/mlx.h"
 # include <X11/keysym.h>
 # include <X11/X.h>
 
-///@brief  Error Messages
 # define MAP_ERROR "Failed to open map"
 # define MAP_ERROR_EX "Map extension not allowed"
 # define MAP_ERROR_PATH "Map path is wrong"
@@ -29,9 +36,10 @@
 # define WRONG_NUM "Number of player,exit or collectible is wrong"
 # define MLX_ERROR "There has been an error on MLX"
 
-# define SIZE 64
+/// @brief Tile Size
+# define SIZE 64 
 
-//------------------STRUCTS----------------------//
+//****************STRUCTS********************//
 
 /// @brief Struct for coordinates of the map
 /// @param x X coord
@@ -56,7 +64,7 @@ typedef struct s_img
 	int		endian;
 }	t_img;
 
-/// @brief Base struct for the game
+/// @brief Base struct of the game
 /// @param map Matrix of coords
 /// @param player Coords of player
 /// @param width X value of the map
@@ -90,9 +98,9 @@ typedef struct s_game
 	t_img	img;
 }				t_game;
 
-//-------------------FUNCTIONS-----------------//
+//****************-FUNCTIONS****************//
 
-//---------GENERAL---------//
+//********GENERAL********//
 
 void	dead(int num, t_game *game);
 void	free_all(t_game *game);
@@ -100,7 +108,7 @@ int		ft_exit(t_game *game);
 void	free_array(char **map, int lines);
 int		ft_n_strclen(const char *str);
 
-//---------MAP STUFF---------//
+//********MAP STUFF********//
 
 t_game	*init(void);
 void	read_map(char *file, t_game *game);
@@ -116,7 +124,7 @@ void	fill_map(int fd, t_game *game);
 void	init_game(t_game *game);
 void	init_img(t_game *game);
 
-//---------Render---------//
+//********Render********//
 
 void	render(t_game *game);
 void	render_window(t_game *game);
@@ -126,7 +134,7 @@ void	render_corners(t_game *game, int x, int y);
 void	render_borders(t_game *game, int x, int y);
 void	render_tiles(t_game *game, int x, int y);
 
-//---------MOVEMENT---------//
+//********MOVEMENT********//
 
 int		handle_keypress(int keysym, t_game *game);
 void	move_up(t_game *game);
@@ -139,3 +147,5 @@ void	validate_move_left(t_game *game);
 void	validate_move_right(t_game *game);
 
 #endif
+
+/**@} */

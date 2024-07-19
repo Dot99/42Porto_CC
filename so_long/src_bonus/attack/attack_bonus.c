@@ -6,17 +6,23 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 10:58:08 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 17:10:55 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:42:15 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup bonus Bonus
  * @file attack_bonus.c
  * @brief Handles the attacks
  */
 
 #include "so_long_bonus.h"
 
+/**
+ * @brief Attack above
+ * 
+ * @param game Struct of the game
+ */
 void	attack_up(t_game *game)
 {
 	if (check_boss(game, 1) == 1)
@@ -44,6 +50,11 @@ void	attack_up(t_game *game)
 	}
 }
 
+/**
+ * @brief Attack right
+ * 
+ * @param game Struct of the game
+ */
 void	attack_right(t_game *game)
 {
 	if (check_boss(game, 2) == 1)
@@ -71,6 +82,11 @@ void	attack_right(t_game *game)
 	}
 }
 
+/**
+ * @brief Attack below
+ * 
+ * @param game Struct of the game
+ */
 void	attack_down(t_game *game)
 {
 	if (check_boss(game, 3) == 1)
@@ -98,6 +114,11 @@ void	attack_down(t_game *game)
 	}
 }
 
+/**
+ * @brief Attack left
+ * 
+ * @param game Struct of the game
+ */
 void	attack_left(t_game *game)
 {
 	if (check_boss(game, 4) == 1)
@@ -142,3 +163,5 @@ void	attack(int keysym, t_game *game)
 			attack_right(game);
 	}
 }
+
+/**@}*/

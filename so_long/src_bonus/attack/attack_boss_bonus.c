@@ -6,11 +6,12 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 10:55:57 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 17:12:17 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:42:41 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup bonus Bonus
  * @file attack_boss_bonus.c
  * @brief Handles boss animation and damage to the player
  */
@@ -47,6 +48,9 @@ int	check_boss(t_game *game, int n)
 	return (0);
 }
 
+/// @brief Handles the attack on the boss from his right
+/// @param game Struct of the game
+/// @param n Direction of player
 void	boss_anim4(t_game *game)
 {
 	put_tile(game, "./textures/lightsaber_attack_left_floor.xpm",
@@ -63,6 +67,9 @@ void	boss_anim4(t_game *game)
 		(game->player.x - 1) * SIZE, game->player.y * SIZE);
 }
 
+/// @brief Handles the attack on the boss from above him
+/// @param game Struct of the game
+/// @param n Direction of player
 void	boss_anim3(t_game *game, int n)
 {
 	if (n == 3)
@@ -84,6 +91,9 @@ void	boss_anim3(t_game *game, int n)
 		boss_anim4(game);
 }
 
+/// @brief Handles the attack on the boss from his left
+/// @param game Struct of the game
+/// @param n Direction of player
 void	boss_anim2(t_game *game, int n)
 {
 	if (n == 2)
@@ -105,7 +115,7 @@ void	boss_anim2(t_game *game, int n)
 		boss_anim3(game, n);
 }
 
-/// @brief Handles the attack on the boss
+/// @brief Handles the attack on the boss from below him
 /// @param game Struct of the game
 /// @param n Direction of player
 void	boss_anim(t_game *game, int n)
@@ -128,3 +138,5 @@ void	boss_anim(t_game *game, int n)
 	else
 		boss_anim2(game, n);
 }
+
+/**@}*/

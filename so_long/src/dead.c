@@ -6,11 +6,12 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:48:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 12:02:46 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:38:45 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup mandatory Mandatory
  * @file dead.c
  * @brief Frees and exit errors
  */
@@ -61,6 +62,12 @@ void	free_array(char **map, int lines)
 	free(map);
 }
 
+/**
+ * @brief Frees the Matrix/Map
+ * 
+ * @param map Matrix/Map
+ * @param game Struct of the game
+ */
 void	free_map(char **map, t_game *game)
 {
 	int	i;
@@ -76,6 +83,10 @@ void	free_map(char **map, t_game *game)
 	free(game->map);
 }
 
+/**
+ * @brief Frees Matrix and handles destruction of mlx stuff
+ * @param game Struct of the game
+ */
 void	free_all(t_game *game)
 {
 	if (!game)
@@ -95,9 +106,11 @@ void	free_all(t_game *game)
 }
 
 /// @brief Function to exit the game cleanly
-/// @param game  
+/// @param game Struct of the game
 int	ft_exit(t_game *game)
 {
 	free_all(game);
 	exit (EXIT_SUCCESS);
 }
+
+/**@}*/

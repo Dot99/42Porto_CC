@@ -6,17 +6,23 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:33:48 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 09:23:11 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:35:49 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup mandatory Mandatory
  * @file movement.c
  * @brief Movements and win checker
  * 
  */
 #include "so_long.h"
 
+/**
+ * @brief Win Checker
+ * @details Besides checking if the player has won
+ * @param game Struct of the game
+ */
 void	check_win(t_game *game)
 {
 	if (game->map[game->player.y][game->player.x] == 'C')
@@ -139,3 +145,5 @@ void	move_right(t_game *game)
 	game->player.x = n_pos;
 	check_win(game);
 }
+
+/**@}*/

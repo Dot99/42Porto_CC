@@ -6,18 +6,19 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:36:13 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 16:44:50 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:35:14 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup mandatory Mandatory
  * @file movement_utils.c
  * @brief Movement Utilities and handle key pressed
  */
 
 #include "so_long.h"
 /// @brief Handles the key pressed
-/// @param keysym Necessary for lmx
+/// @param keysym Necessary for mlx
 /// @param game Struct of the game
 int	handle_keypress(int keysym, t_game *game)
 {
@@ -101,3 +102,5 @@ void	validate_move_right(t_game *game)
 	game->moves++;
 	ft_printf("Moves: %d\n", game->moves);
 }
+
+/**@}*/

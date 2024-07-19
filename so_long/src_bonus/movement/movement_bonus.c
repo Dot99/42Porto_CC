@@ -6,11 +6,12 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:33:48 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 17:00:48 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:48:31 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup bonus Bonus
  * @file movement_bonus.c
  * @brief Movements and win checker + movement animations
  * 
@@ -18,6 +19,13 @@
 
 #include "so_long_bonus.h"
 
+/**
+ * @brief Win Checker
+ * @details Besides checking if the player has won, 
+ * also allows the player to collect the lightsaber and
+ * check if the boss can spawn
+ * @param game Struct of the game
+ */
 void	check_win(t_game *game)
 {
 	if (game->map[game->player.y][game->player.x] == 'L')
@@ -162,3 +170,5 @@ void	move_right(t_game *game)
 	check_boss_start(game);
 	check_win(game);
 }
+
+/**@}*/
