@@ -6,7 +6,7 @@
 #    By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/15 09:43:10 by gude-jes          #+#    #+#              #
-#    Updated: 2024/07/18 09:26:51 by gude-jes         ###   ########.fr        #
+#    Updated: 2024/07/18 14:21:08 by gude-jes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ $(OBJ_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o
 
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(OBJ_DIR)
 
 fclean: clean
 	@$(RM) $(NAME) $(OBJ_DIR)
