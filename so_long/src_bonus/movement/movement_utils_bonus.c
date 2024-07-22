@@ -6,16 +6,16 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:36:13 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/19 10:48:43 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:41:19 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
  * @defgroup bonus Bonus
+ * @{
  * @file movement_utils_bonus.c
  * @brief Movement Utilities and handle key pressed
  */
-
 #include "so_long_bonus.h"
 
 /// @brief Handles the key pressed

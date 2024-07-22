@@ -6,11 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:39:16 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 11:56:57 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:42:55 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup bonus Bonus
+ * @{
  * @file init_bonus.c
  * @brief Initializes the struct
  */
@@ -72,3 +74,5 @@ t_game	*init(void)
 	init_img(game);
 	return (game);
 }
+
+/**@}*/

@@ -6,12 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 10:58:08 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/19 10:42:15 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:40:15 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
  * @defgroup bonus Bonus
+ * @{
  * @file attack_bonus.c
  * @brief Handles the attacks
  */

@@ -6,11 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 08:48:05 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/04 17:07:18 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:42:01 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup bonus Bonus
+ * @{
  * @file render_moves_bonus.c
  * @brief Renders the tile that shows up the movements
  */
@@ -33,3 +35,5 @@ void	render_moves(t_game *game)
 	mlx_string_put(game->mlx_ptr, game->win_ptr, x + 42, y, 0xCC0000, moves);
 	free(moves);
 }
+
+/**@}*/

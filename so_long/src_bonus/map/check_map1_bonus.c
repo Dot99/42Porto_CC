@@ -6,12 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:54:25 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/19 10:45:05 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:40:57 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
  * @defgroup bonus Bonus
+ * @{
  * @file check_map1_bonus.c
  * @brief Verifications of the map 1 + new characters
  */

@@ -6,11 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 08:59:10 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/08 11:57:12 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:42:12 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup bonus Bonus
+ * @{
  * @file render_window_bonus.c
  * @brief Main function to render and render of the window
  */
@@ -47,3 +49,5 @@ void	render(t_game *game)
 	mlx_loop_hook(game->mlx_ptr, render_anim, game);
 	mlx_loop(game->mlx_ptr);
 }
+
+/**@}*/

@@ -6,11 +6,12 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:30:39 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/19 09:27:02 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:43:09 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup bonus Bonus
  * @file main_bonus.c
  * @brief Main of the program
  */
@@ -43,3 +44,5 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+
+/**@}*/

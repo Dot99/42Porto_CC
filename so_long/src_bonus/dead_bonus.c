@@ -6,11 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:48:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/19 09:37:11 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:42:40 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @defgroup bonus Bonus
+ * @{
  * @file dead_bonus.c
  * @brief Frees and exit errors
  */
@@ -111,3 +113,5 @@ int	ft_exit(t_game *game)
 	free_all(game);
 	exit (EXIT_SUCCESS);
 }
+
+/**@}*/

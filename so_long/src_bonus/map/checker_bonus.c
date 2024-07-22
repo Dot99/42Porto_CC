@@ -6,12 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:40:27 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/19 10:46:56 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:41:01 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
  * @defgroup bonus Bonus
+ * @{
  * @file checker_bonus.c
  * @brief Checks the extension of the file
  */

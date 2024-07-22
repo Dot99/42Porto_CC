@@ -6,12 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 09:29:29 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/19 10:44:07 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:40:45 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
  * @defgroup bonus Bonus
+ * @{
  * @file boss_health_bonus.c
  * @brief  Handles boss health
  */

@@ -6,12 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 11:41:12 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/19 10:43:38 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:40:35 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
  * @defgroup bonus Bonus
+ * @{
  * @file lightsaber_bonus.c
  * @brief Weapon check
  */

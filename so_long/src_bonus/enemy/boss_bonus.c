@@ -6,12 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:59:11 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/19 10:43:54 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:40:41 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
  * @defgroup bonus Bonus
+ * @{
  * @file boss_bonus.c
  * @brief Boss related functions
  */

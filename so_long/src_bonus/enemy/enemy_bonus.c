@@ -6,12 +6,13 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 16:01:35 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/07/19 10:44:19 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:40:47 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
  * @defgroup bonus Bonus
+ * @{
  * @file enemy_bonus.c
  * @brief Renders enemies anim and lose checks
  */
