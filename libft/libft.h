@@ -6,9 +6,16 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 13:37:27 by dot               #+#    #+#             */
-/*   Updated: 2024/04/17 09:47:36 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/22 12:22:27 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file libft.h
+ * @brief Libft Header
+ */
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -17,6 +24,11 @@
 # include <stdio.h>
 # include <stdlib.h>
 
+/**
+ * @brief Struct for list of bonus
+ * @param content Content of each node
+ * @param next Pointer to next node
+ */
 typedef struct s_list
 {
 	void			*content;
@@ -73,3 +85,5 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
+
+/*@}*/
