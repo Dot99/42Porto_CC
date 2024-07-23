@@ -25,7 +25,8 @@
  * @param big String to be searched
  * @param little String to search
  * @param len Size to search
- * @return char* If little doesn't exist returns big. Othewise returns little or 0 if not found
+ * @return char* If little doesn't exist returns big. Othewise returns little
+ *  or 0 if not found
  */
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
