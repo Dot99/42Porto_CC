@@ -10,9 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file ft_printf_utils.c
+ * @brief Utils for ft_printf
+*/
+
 #include "ft_printf.h"
 #include "libft/libft.h"
 
+/**
+ * @brief Print a string without return
+ * 
+ * @param str String to be printed
+*/
 void	ft_putstr(char *str)
 {
 	int	i;
@@ -25,6 +37,12 @@ void	ft_putstr(char *str)
 	}
 }
 
+/**
+ * @brief Print a string
+ * 
+ * @param str String to be printed
+ * @return int Length of string
+*/
 int	ft_printstr(char *str)
 {
 	int	i;
@@ -43,6 +61,12 @@ int	ft_printstr(char *str)
 	return (i);
 }
 
+/**
+ * @brief Prints a number
+ * 
+ * @param n Number to be printed
+ * @return int length of number converted to string
+*/
 int	ft_printnbr(int n)
 {
 	int		len;
@@ -55,6 +79,11 @@ int	ft_printnbr(int n)
 	return (len);
 }
 
+/**
+ * @brief Prints %
+ * 
+ * @return int 1 due to length of %
+*/
 int	ft_printpercent(void)
 {
 	write(1, "%", 1);

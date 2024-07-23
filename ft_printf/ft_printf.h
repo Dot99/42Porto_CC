@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @brief Ft_printf header
+ * @file ft_printf.h
+*/
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -31,3 +37,5 @@ int		ft_printnbr(int n);
 int		ft_printpercent(void);
 
 #endif
+
+/**@}*/

@@ -10,8 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file ft_putptr.c
+ * @brief Print a memory space through a hexadecimal number
+*/
+
 #include "ft_printf.h"
 
+/**
+ * @brief Prints memory space as a hexadecimal number
+ * 
+ * @param nbr Number
+ * @param c Base
+ * @return int Length of number
+*/
 int	putptrhex(unsigned long nbr, const char c)
 {
 	char	*base;
@@ -34,6 +48,12 @@ int	putptrhex(unsigned long nbr, const char c)
 	return (result);
 }
 
+/**
+ * @brief Handles edge cases and prints the start of the memory space
+ * 
+ * @param nbr Pointer to be printed
+ * @return int Length of the hexadecimal
+*/
 int	ft_putptr(void *nbr)
 {
 	int				result;
@@ -53,3 +73,5 @@ int	ft_putptr(void *nbr)
 		result += putptrhex(n, 'x');
 	return (result);
 }
+
+/**@}*/
