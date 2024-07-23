@@ -12,6 +12,7 @@
 
 /**
  * @defgroup mandatory Mandatory
+ * @{
  * @brief Ft_printf header
  * @file ft_printf.h
 */

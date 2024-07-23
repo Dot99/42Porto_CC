@@ -6,12 +6,25 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:17:27 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/09 14:55:25 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/22 11:18:48 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file ft_putnbr_fd.c
+ * @brief Outputs the integer ’n’ to the given file descriptor.
+*/
+
 #include "libft.h"
 
+/**
+ * @brief Writes a number to the file descriptor
+ * 
+ * @param nb Number to write
+ * @param fd File Descriptor
+ */
 void	ft_putnbr_fd(int nb, int fd)
 {
 	unsigned int	nbr;
@@ -27,3 +40,5 @@ void	ft_putnbr_fd(int nb, int fd)
 		ft_putnbr_fd(nbr / 10, fd);
 	ft_putchar_fd((char)(nbr % 10 + 48), fd);
 }
+
+/**@}*/
