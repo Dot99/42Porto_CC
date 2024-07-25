@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup bonus Bonus
+ * @{
+ * @file get_next_line_bonus.h
+ * @brief Bonus Get Next Line
+ * 
+*/
+
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
@@ -17,6 +25,7 @@
 #  define BUFFER_SIZE 42
 # endif
 
+///@brief Max file descriptors -> ulimits -Sn
 # define MAX_FD 1024
 
 # include <stdlib.h>
@@ -35,3 +44,5 @@ char	*get_next_line(int fd);
 int		ft_strclen(char *str, char c);
 
 #endif
+
+/**@}*/

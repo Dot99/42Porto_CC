@@ -10,8 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file get_next_line_utils.c
+ * @brief Utils for get_next_line.c
+*/
+
 #include "get_next_line.h"
 
+/**
+ * @brief Concatenates s1 and s2 and returns a new string
+ * 
+ * @param s1 First String
+ * @param s2 Second String
+ * @return char* New string
+*/
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*newstring;
@@ -40,6 +54,13 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (newstring);
 }
 
+/**
+ * @brief Get the length of a string until a character
+ * 
+ * @param str String
+ * @param c Character
+ * @return int Length
+*/
 int	ft_strclen(char *str, char c)
 {
 	int	i;
@@ -52,6 +73,13 @@ int	ft_strclen(char *str, char c)
 	return (i);
 }
 
+/**
+ * @brief Duplicate a string
+ * 
+ * @param s String
+ * @param len Length to duplicate
+ * @return char* New string
+*/
 char	*ft_strndup(char *s, int len)
 {
 	char	*str;
@@ -70,6 +98,13 @@ char	*ft_strndup(char *s, int len)
 	return (str);
 }
 
+/**
+ * @brief Checks if the string has a character
+ * 
+ * @param str String
+ * @param c Character
+ * @return char* Position of character in string
+*/
 char	*ft_strchr(char *str, char c)
 {
 	int	i;
@@ -91,3 +126,5 @@ char	*ft_strchr(char *str, char c)
 		return (NULL);
 	return (str + i);
 }
+
+/**@}*/

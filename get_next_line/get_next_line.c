@@ -10,8 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file get_next_line.c
+ * @brief Reads a line from a file descriptor and returns it
+*/
+
 #include "get_next_line.h"
 
+/**
+ * @brief Handle the leftover from line
+ * 
+ * @param line_buffer Static variable
+ * @return char* Leftover
+*/
 static char	*_set_line(char *line_buffer)
 {
 	char	*leftover;
@@ -24,6 +37,13 @@ static char	*_set_line(char *line_buffer)
 	return (leftover);
 }
 
+/**
+ * @brief Fills the buffer with the line read
+ * 
+ * @param fd File descriptor
+ * @param left_c Static variable
+ * @return char* Line joined to left_c
+*/
 static char	*_fill_line_buffer(int fd, char *left_c)
 {
 	ssize_t	b_read;
@@ -48,6 +68,13 @@ static char	*_fill_line_buffer(int fd, char *left_c)
 	return (left_c);
 }
 
+/**
+ * @brief Clears the data from buffer and static variable
+ * 
+ * @param buffer Buffer
+ * @param left_c Static variable
+ * @return char* NULL
+*/
 char	*free_data(char *buffer, char *left_c)
 {
 	free(buffer);
@@ -55,6 +82,12 @@ char	*free_data(char *buffer, char *left_c)
 	return (NULL);
 }
 
+/**
+ * @brief Main function to read a line from a file descriptor
+ * 
+ * @param fd File descriptor
+ * @return char* Line obtained
+*/
 char	*get_next_line(int fd)
 {
 	static char	*left_c;
@@ -75,3 +108,5 @@ char	*get_next_line(int fd)
 		free(left_c);
 	return (line);
 }
+
+/**@}*/

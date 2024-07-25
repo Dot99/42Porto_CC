@@ -10,6 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @brief Get Next Line Header
+ * @file get_next_line.h
+*/
+
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
@@ -33,3 +40,5 @@ char	*get_next_line(int fd);
 int		ft_strclen(char *str, char c);
 
 #endif
+
+/**@}*/

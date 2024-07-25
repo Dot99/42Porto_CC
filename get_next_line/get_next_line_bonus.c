@@ -10,10 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file get_next_line_bonus.c
+ * @brief Reads a line from multiple file descriptor and returns it
+*/
+
 #include "get_next_line_bonus.h"
 
-#include "get_next_line.h"
-
+/**
+ * @brief Clears the data from buffer and static variable
+ * 
+ * @param buffer Buffer
+ * @param stash Static variable
+ * @return char* NULL
+*/
 char	*free_data(char *stash, char *buffer)
 {
 	free(stash);
@@ -21,6 +31,13 @@ char	*free_data(char *stash, char *buffer)
 	return (NULL);
 }
 
+/**
+ * @brief Fills the buffer with the line read
+ * 
+ * @param fd File descriptor
+ * @param stash Static variable
+ * @return char* Line joined to stash
+*/
 char	*read_from_file(int fd, char *stash)
 {
 	char	*buffer;
@@ -45,6 +62,12 @@ char	*read_from_file(int fd, char *stash)
 	return (stash);
 }
 
+/**
+ * @brief Handle the leftover from line
+ * 
+ * @param stash Static variable
+ * @return char* Leftover
+*/
 char	*leftovers(char *stash)
 {
 	char	*leftover;
@@ -57,6 +80,12 @@ char	*leftovers(char *stash)
 	return (leftover);
 }
 
+/**
+ * @brief Main function to read a line from multiple file descriptors
+ * 
+ * @param fd File descriptor
+ * @return char* Line obtained
+*/
 char	*get_next_line(int fd)
 {
 	static char	*stash[MAX_FD];
@@ -77,18 +106,5 @@ char	*get_next_line(int fd)
 		free(stash[fd]);
 	return (new_line);
 }
-// int main()
-// {
-// 	int fd = open("test.txt", O_RDONLY);
-// 	int fd1 = open("test1.txt", O_RDONLY);
-// 	int fd2 = open("test2.txt", O_RDONLY);
-// 	int i = 0;
-// 	while(i < 2)
-// 	{
-// 		printf("%s", get_next_line(fd));
-// 		printf("%s", get_next_line(fd1));
-// 		printf("%s", get_next_line(fd2));
-// 		i++;
-// 	}
-// 	return(0);
-// }
+
+/**@}*/
