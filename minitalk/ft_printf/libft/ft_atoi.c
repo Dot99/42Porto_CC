@@ -6,12 +6,25 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:05:29 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/23 10:00:13 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/22 09:40:55 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file ft_atoi.c
+ * @brief Ascii to Int
+*/
+
 #include "libft.h"
 
+/**
+ * @brief Converts a string with numbers to its equivalent in INT
+ * 
+ * @param str String with numbers to convert
+ * @return int Converted string of numbers
+ */
 int	ft_atoi(const char *str)
 {
 	int	number;
@@ -38,3 +51,5 @@ int	ft_atoi(const char *str)
 	}
 	return (number * negative);
 }
+
+/**@}*/

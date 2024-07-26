@@ -10,8 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @file server.c
+ * @brief Server side
+*/
+
 #include "../include/minitalk.h"
 
+/**
+ * @brief Join a character to a string
+ * 
+ * @param s1 String to add the character
+ * @param c Character to be joined
+ * @return char* New string
+*/
 char	*ft_strcjoin(char const *s1, char c)
 {
 	int		size;
@@ -36,6 +49,11 @@ char	*ft_strcjoin(char const *s1, char c)
 	return (newstring);
 }
 
+/**
+ * @brief Convert binary to ascii
+ * 
+ * @param sig Signal being received
+*/
 void	ft_btoa(int sig)
 {
 	static int	bit;
@@ -64,6 +82,13 @@ void	ft_btoa(int sig)
 	}
 }
 
+/**
+ * @brief Main function of server
+ * 
+ * @param argc Number of arguments
+ * @param argv String of arguments
+ * @return int 0 if everything OK | 1 if not
+*/
 int	main(int argc, char **argv)
 {
 	int	pid;
@@ -86,3 +111,5 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+
+/**@}*/

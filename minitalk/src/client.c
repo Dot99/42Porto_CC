@@ -10,8 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file client.c
+ * @brief Client Side
+*/
+
 #include "../include/minitalk.h"
 
+/**
+ * @brief Dynamic Sleep
+ * 
+ * @param size Length of string
+ * @return size_t Time to sleep
+*/
 size_t	ft_sleep(size_t size)
 {
 	if (size <= 10000)
@@ -26,6 +39,13 @@ size_t	ft_sleep(size_t size)
 		return (10000);
 }
 
+/**
+ * @brief Convert ascii to binary
+ * 
+ * @param pid Process Id
+ * @param c Character to convert
+ * @param size Length of string
+*/
 void	ft_atob(int pid, char c, size_t size)
 {
 	int	bit;
@@ -54,6 +74,13 @@ void	ft_atob(int pid, char c, size_t size)
 	}
 }
 
+/**
+ * @brief Main function of client
+ * 
+ * @param argc Number of arguments
+ * @param argv String of arguments
+ * @return int 0 if everything OK | 1 if not
+*/
 int	main(int argc, char **argv)
 {
 	int		pid;
@@ -81,3 +108,5 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+
+/**@}*/

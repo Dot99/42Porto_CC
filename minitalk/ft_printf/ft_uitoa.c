@@ -10,8 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file ft_uitoa.c
+ * @brief Convert a unsigned into to a ascii string
+*/
+
 #include "ft_printf.h"
 
+/**
+ * @brief Get Length of number
+ * 
+ * @param nbr Number
+ * @return unsigned int Length
+*/
 unsigned int	ft_usize(unsigned int nbr)
 {
 	int	count;
@@ -27,6 +40,12 @@ unsigned int	ft_usize(unsigned int nbr)
 	return (count);
 }
 
+/**
+ * @brief Convert the unsigned int to ascii and print it
+ * 
+ * @param nbr Number
+ * @return int Length of number converted to string
+*/
 int	ft_uitoa(unsigned int nbr)
 {
 	char			*newstr;
@@ -51,3 +70,5 @@ int	ft_uitoa(unsigned int nbr)
 	free(newstr);
 	return (result);
 }
+
+/**@}*/

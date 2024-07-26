@@ -10,10 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file ft_putchar.c
+ * @brief Prints a character 
+*/
+
 #include "ft_printf.h"
 
+/**
+ * @brief Print a character 
+ * 
+ * @param c Character to be printed
+ * @return int Length of character - 1
+*/
 int	ft_putchar(char c)
 {
 	write (1, &c, 1);
 	return (1);
 }
+
+/**@}*/
