@@ -1,0 +1,80 @@
+\doxysection{src/server.c File Reference}
+\hypertarget{server_8c}{}\label{server_8c}\index{src/server.c@{src/server.c}}
+
+
+Server side.  
+
+
+{\ttfamily \#include "{}../include/minitalk.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{server_8c_a01a0087066e28de69381389883fe0908}{ft\+\_\+strcjoin}} (char const \texorpdfstring{$\ast$}{*}s1, char c)
+\begin{DoxyCompactList}\small\item\em Join a character to a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{server_8c_a3c63204f9321b09144ce9a0ea04f9995}{ft\+\_\+btoa}} (int sig)
+\begin{DoxyCompactList}\small\item\em Convert binary to ascii. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{server_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\begin{DoxyCompactList}\small\item\em Main function of server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Server side. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{server_8c_a3c63204f9321b09144ce9a0ea04f9995}\index{server.c@{server.c}!ft\_btoa@{ft\_btoa}}
+\index{ft\_btoa@{ft\_btoa}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{ft\_btoa()}{ft\_btoa()}}
+{\footnotesize\ttfamily \label{server_8c_a3c63204f9321b09144ce9a0ea04f9995} 
+void ft\+\_\+btoa (\begin{DoxyParamCaption}\item[{int}]{sig}{}\end{DoxyParamCaption})}
+
+
+
+Convert binary to ascii. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sig} & Signal being received \\
+\hline
+\end{DoxyParams}
+\Hypertarget{server_8c_a01a0087066e28de69381389883fe0908}\index{server.c@{server.c}!ft\_strcjoin@{ft\_strcjoin}}
+\index{ft\_strcjoin@{ft\_strcjoin}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strcjoin()}{ft\_strcjoin()}}
+{\footnotesize\ttfamily \label{server_8c_a01a0087066e28de69381389883fe0908} 
+char \texorpdfstring{$\ast$}{*} ft\+\_\+strcjoin (\begin{DoxyParamCaption}\item[{char const \texorpdfstring{$\ast$}{*}}]{s1}{, }\item[{char}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Join a character to a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & String to add the character \\
+\hline
+{\em c} & Character to be joined \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char\texorpdfstring{$\ast$}{*} New string 
+\end{DoxyReturn}
+\Hypertarget{server_8c_a3c04138a5bfe5d72780bb7e82a18e627}\index{server.c@{server.c}!main@{main}}
+\index{main@{main}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{server_8c_a3c04138a5bfe5d72780bb7e82a18e627} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{}\end{DoxyParamCaption})}
+
+
+
+Main function of server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of arguments \\
+\hline
+{\em argv} & String of arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 if everything OK \texorpdfstring{$\vert$}{|} 1 if not 
+\end{DoxyReturn}
