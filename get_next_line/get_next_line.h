@@ -13,8 +13,8 @@
 /**
  * @defgroup mandatory Mandatory
  * @{
- * @brief Get Next Line Header
  * @file get_next_line.h
+ * @brief Get Next Line Header Bonus
 */
 
 #ifndef GET_NEXT_LINE_H
