@@ -6,12 +6,25 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 10:18:47 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/18 16:52:10 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:22:16 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file ft_putnbrhex.c
+ * @brief Functions to print a hexadecimal 
+*/
+
 #include "../libft.h"
 
+/**
+ * @brief Get num length
+ * 
+ * @param num Number to get length
+ * @return int Length of number
+*/
 int	ft_hex_len(unsigned	int num)
 {
 	int	len;
@@ -25,6 +38,12 @@ int	ft_hex_len(unsigned	int num)
 	return (len);
 }
 
+/**
+ * @brief Prints a number in hexadecimal base
+ * 
+ * @param num Number to be printed
+ * @param c Uppercase or lowercase base
+*/
 void	ft_put_hex(unsigned int num, const char c)
 {
 	if (num >= 16)
@@ -46,6 +65,13 @@ void	ft_put_hex(unsigned int num, const char c)
 	}
 }
 
+/**
+ * @brief Checker of num
+ * 
+ * @param num Number to be checked
+ * @param c Base
+ * @return int Legth of number
+*/
 int	ft_putnbrhex(unsigned int num, const char c)
 {
 	if (num == 0)
@@ -54,3 +80,5 @@ int	ft_putnbrhex(unsigned int num, const char c)
 		ft_put_hex(num, c);
 	return (ft_hex_len(num));
 }
+
+/**@}*/

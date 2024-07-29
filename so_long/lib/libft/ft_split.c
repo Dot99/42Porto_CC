@@ -6,12 +6,29 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 09:01:42 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/04/23 10:01:23 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/07/22 11:34:32 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file ft_split.c
+ * @brief Allocates (with malloc(3)) and returns an array
+of strings obtained by splitting ’s’ using the
+character ’c’ as a delimiter. The array must end
+with a NULL pointer.
+*/
+
 #include "libft.h"
 
+/**
+ * @brief Free the arrays
+ * 
+ * @param ptr Double Pointer to array
+ * @param i Number to limit the frees
+ * @return char** 0
+ */
 char	**free_array(char **ptr, int i)
 {
 	while (i > 0)
@@ -23,6 +40,13 @@ char	**free_array(char **ptr, int i)
 	return (0);
 }
 
+/**
+ * @brief Counts the number of words in a string
+ * 
+ * @param str String to count the words
+ * @param c Delimiter character
+ * @return int Number of words
+ */
 int	ft_count_words(char const *str, char c)
 {
 	int	i;
@@ -44,6 +68,15 @@ int	ft_count_words(char const *str, char c)
 	return (count);
 }
 
+/**
+ * @brief Puts the word of the string s into the word array
+ * 
+ * @param word Array to put the word
+ * @param s String
+ * @param i End of word
+ * @param word_len Size of word
+ * @return char* 
+ */
 char	*ft_putword(char *word, char const *s, int i, int word_len)
 {
 	int	j;
@@ -59,6 +92,15 @@ char	*ft_putword(char *word, char const *s, int i, int word_len)
 	return (word);
 }
 
+/**
+ * @brief Splits the words
+ * 
+ * @param s String 
+ * @param c Delimiter character
+ * @param s2 New Array string
+ * @param num_words Number of words
+ * @return char** 
+ */
 char	**ft_split_words(char const *s, char c, char **s2, int num_words)
 {
 	int	i;
@@ -88,6 +130,13 @@ char	**ft_split_words(char const *s, char c, char **s2, int num_words)
 	return (s2);
 }
 
+/**
+ * @brief Main function of ft_split
+ * 
+ * @param s String to split
+ * @param c Delimiter character
+ * @return char** Matrix of s string splitted
+ */
 char	**ft_split(char const *s, char c)
 {
 	char			**s2;
@@ -102,3 +151,5 @@ char	**ft_split(char const *s, char c)
 	s2 = ft_split_words(s, c, s2, num_words);
 	return (s2);
 }
+
+/**@}*/

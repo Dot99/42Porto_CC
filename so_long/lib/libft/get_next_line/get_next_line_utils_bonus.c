@@ -6,12 +6,26 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 08:59:35 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/19 11:41:17 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/05/03 10:03:21 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file get_next_line_utils_bonus.c
+ * @brief Utils for get_next_line_bonus.c 
+*/
+
 #include "../libft.h"
 
+/**
+ * @brief Checks if the string has a character
+ * 
+ * @param str String
+ * @param c Character
+ * @return char* Position of character in string
+*/
 char	*gnl_ft_strchr(char *str, char c)
 {
 	int	i;
@@ -34,6 +48,13 @@ char	*gnl_ft_strchr(char *str, char c)
 	return (str + i);
 }
 
+/**
+ * @brief Concatenates s1 and s2 and returns a new string
+ * 
+ * @param s1 First String
+ * @param s2 Second String
+ * @return char* New string
+*/
 char	*gnl_ft_strjoin(char *s1, char *s2)
 {
 	char	*newstring;
@@ -62,6 +83,13 @@ char	*gnl_ft_strjoin(char *s1, char *s2)
 	return (newstring);
 }
 
+/**
+ * @brief Get the length of a string until a character
+ * 
+ * @param str String
+ * @param c Character
+ * @return int Length
+*/
 int	ft_strclen(char *str, char c)
 {
 	int	i;
@@ -74,6 +102,13 @@ int	ft_strclen(char *str, char c)
 	return (i);
 }
 
+/**
+ * @brief Duplicate a string
+ * 
+ * @param s String
+ * @param len Length to duplicate
+ * @return char* New string
+*/
 char	*ft_strndup(char *s, int len)
 {
 	char	*str;
@@ -91,3 +126,5 @@ char	*ft_strndup(char *s, int len)
 	str[i] = '\0';
 	return (str);
 }
+
+/**@}*/

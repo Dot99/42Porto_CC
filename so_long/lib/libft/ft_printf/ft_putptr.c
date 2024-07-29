@@ -6,12 +6,26 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 10:35:41 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/18 16:52:12 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:13:11 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file ft_putptr.c
+ * @brief Print a memory space through a hexadecimal number
+*/
+
 #include "../libft.h"
 
+/**
+ * @brief Prints memory space as a hexadecimal number
+ * 
+ * @param nbr Number
+ * @param c Base
+ * @return int Length of number
+*/
 int	putptrhex(unsigned long nbr, const char c)
 {
 	char	*base;
@@ -34,6 +48,12 @@ int	putptrhex(unsigned long nbr, const char c)
 	return (result);
 }
 
+/**
+ * @brief Handles edge cases and prints the start of the memory space
+ * 
+ * @param nbr Pointer to be printed
+ * @return int Length of the hexadecimal
+*/
 int	ft_putptr(void *nbr)
 {
 	int				result;
@@ -53,3 +73,5 @@ int	ft_putptr(void *nbr)
 		result += putptrhex(n, 'x');
 	return (result);
 }
+
+/**@}*/

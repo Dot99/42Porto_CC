@@ -6,12 +6,27 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:23:10 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/18 16:52:05 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/29 08:30:42 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file ft_printf.c
+ * @brief Main file of ft_printf
+*/
+
 #include "../libft.h"
 
+/**
+ * @brief Checker of character after %
+ * 
+ * @param str String
+ * @param i Position of string
+ * @param ap Variatic Arguments
+ * @return int Length of printable
+*/
 static int	ft_check(const char *str, int i, va_list ap)
 {
 	if (str[i] == 'c')
@@ -31,6 +46,13 @@ static int	ft_check(const char *str, int i, va_list ap)
 	return (0);
 }
 
+/**
+ * @brief Main function of ft_printf
+ * 
+ * @param str First part of the string
+ * @param ... Variatic arguments
+ * @return int Length of printable string
+*/
 int	ft_printf(const char *str, ...)
 {
 	va_list	ap;
@@ -58,3 +80,5 @@ int	ft_printf(const char *str, ...)
 	va_end(ap);
 	return (ret);
 }
+
+/**@}*/

@@ -6,12 +6,25 @@
 /*   By: gude-jes <gude-jes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:31:15 by gude-jes          #+#    #+#             */
-/*   Updated: 2024/06/18 16:52:16 by gude-jes         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:14:53 by gude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @defgroup mandatory Mandatory
+ * @{
+ * @file ft_uitoa.c
+ * @brief Convert a unsigned into to a ascii string
+*/
+
 #include "../libft.h"
 
+/**
+ * @brief Get Length of number
+ * 
+ * @param nbr Number
+ * @return unsigned int Length
+*/
 unsigned int	ft_usize(unsigned int nbr)
 {
 	int	count;
@@ -27,6 +40,12 @@ unsigned int	ft_usize(unsigned int nbr)
 	return (count);
 }
 
+/**
+ * @brief Convert the unsigned int to ascii and print it
+ * 
+ * @param nbr Number
+ * @return int Length of number converted to string
+*/
 int	ft_uitoa(unsigned int nbr)
 {
 	char			*newstr;
@@ -51,3 +70,5 @@ int	ft_uitoa(unsigned int nbr)
 	free(newstr);
 	return (result);
 }
+
+/**@}*/
